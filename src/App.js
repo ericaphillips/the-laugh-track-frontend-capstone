@@ -2,6 +2,7 @@ import './App.css';
 import { Route, Redirect } from "react-router-dom"
 import { Login } from "./components/auth/Login"
 import { Register } from "./components/auth/Register"
+import { Logout } from "./components/auth/Logout"
 
 export const App = () => (
   <>
@@ -10,7 +11,9 @@ export const App = () => (
             if (localStorage.getItem("app_user_id")) {
                 return (
                     <>
-                        //Components that are rendered when the user is authenticated go inside this React fragment
+                        <button className="logout--button" onClick={Logout}>
+                            Log Out
+                        </button>
                     </>
                 )
             } else {
