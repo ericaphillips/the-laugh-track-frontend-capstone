@@ -2,7 +2,8 @@ import './App.css';
 import { Route, Redirect } from "react-router-dom"
 import { Login } from "./components/auth/Login"
 import { Register } from "./components/auth/Register"
-import { Logout } from "./components/auth/Logout"
+import { NavBar } from "./components/nav/NavBar"
+import { ApplicationViews } from "./components/ApplicationViews"
 
 export const App = () => (
   <>
@@ -11,9 +12,8 @@ export const App = () => (
             if (localStorage.getItem("app_user_id")) {
                 return (
                     <>
-                        <button className="logout--button" onClick={Logout}>
-                            Log Out
-                        </button>
+                        <Route render={props => <NavBar {...props} />} />
+                        <Route render={props => <ApplicationViews {...props} />} />
                     </>
                 )
             } else {
