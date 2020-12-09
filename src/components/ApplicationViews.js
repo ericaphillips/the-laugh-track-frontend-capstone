@@ -1,13 +1,19 @@
 import React from "react"
 import { Route } from "react-router-dom"
-import { Logout } from "./auth/Logout"
+import { SpecialList } from "./specials/SpecialList"
+import { SpecialProvider } from "./specials/SpecialProvider"
 
 export const ApplicationViews = (props) => {
     return (
         <>
-        <button className="logout--button" onClick={Logout}>
-                            Log Out
-                        </button>
+        <SpecialProvider>
+            <Route exact path="/specials" render={
+                props => <SpecialList {...props} />
+            } />
+            {/* <Route exact path ="/employees/create" render={
+                props => <SpecialForm {...props} />
+            } /> */}
+        </SpecialProvider>
         </>
     )
 }

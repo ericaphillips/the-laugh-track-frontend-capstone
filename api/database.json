@@ -12,7 +12,15 @@
   "specials": [
     {
       "name": "X",
-      "comicName": "Daniel Sloss"
+      "comicName": "Daniel Sloss",
+      "rating": 10,
+      "specialLengthId": "90 minutes",
+      "specialPlatformId": "HBO",
+      "cost": "subscription",
+      "clean": false,
+      "comments": "This is the greatest comedy special I have ever seen",
+      "userId": 4,
+      "id": 1
     }
   ]
 }
