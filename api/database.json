@@ -13,14 +13,178 @@
     {
       "name": "X",
       "comicName": "Daniel Sloss",
-      "rating": 10,
-      "specialLengthId": "90 minutes",
-      "specialPlatformId": "HBO",
+      "rating": "0",
+      "specialLengthId": 4,
+      "specialPlatformId": 3,
       "cost": "subscription",
-      "clean": false,
+      "clean": "0",
       "comments": "This is the greatest comedy special I have ever seen",
+      "specialGenreId": 7,
       "userId": 4,
       "id": 1
+    },
+    {
+      "name": "Jigsaw",
+      "comicName": "Daniel Sloss",
+      "rating": "0",
+      "specialLengthId": 4,
+      "specialPlatformId": 6,
+      "cost": "Netflix Subscription",
+      "clean": "0",
+      "comments": "the best",
+      "specialGenreId": 7,
+      "userId": 4,
+      "id": 3
+    }
+  ],
+  "specialLengths": [
+    {
+      "id": 1,
+      "length": "0-15 minutes"
+    },
+    {
+      "id": 2,
+      "length": "15-30 minutes"
+    },
+    {
+      "id": 3,
+      "length": "30 minutes-1 hour"
+    },
+    {
+      "id": 4,
+      "length": "1 hour-1.5 hours"
+    },
+    {
+      "id": 5,
+      "length": "1.5 hours-2 hours"
+    },
+    {
+      "id": 6,
+      "length": "2+ hours"
+    }
+  ],
+  "specialPlatforms": [
+    {
+      "id": 1,
+      "platform": "Amazon Prime"
+    },
+    {
+      "id": 2,
+      "platform": "Comedian's Site"
+    },
+    {
+      "id": 3,
+      "platform": "Comedy Central"
+    },
+    {
+      "id": 4,
+      "platform": "HBO"
+    },
+    {
+      "id": 5,
+      "platform": "Hulu"
+    },
+    {
+      "id": 6,
+      "platform": "Netflix"
+    },
+    {
+      "id": 7,
+      "platform": "YouTube"
+    },
+    {
+      "id": 8,
+      "platform": "Other"
+    }
+  ],
+  "specialGenres": [
+    {
+      "id": 1,
+      "genre": "Aternative Comedy"
+    },
+    {
+      "id": 2,
+      "genre": "Anecdotal Comedy"
+    },
+    {
+      "id": 3,
+      "genre": "Anti-humor"
+    },
+    {
+      "id": 4,
+      "genre": "Blue Comedy"
+    },
+    {
+      "id": 5,
+      "genre": "Character Comedy"
+    },
+    {
+      "id": 6,
+      "genre": "Cringe Comedy"
+    },
+    {
+      "id": 7,
+      "genre": "Dark Comedy"
+    },
+    {
+      "id": 8,
+      "genre": "Deadpan Comedy"
+    },
+    {
+      "id": 9,
+      "genre": "Heritage Comedy"
+    },
+    {
+      "id": 10,
+      "genre": "Improvisational Comedy"
+    },
+    {
+      "id": 11,
+      "genre": "Inside Humor"
+    },
+    {
+      "id": 12,
+      "genre": "Insult Comedy"
+    },
+    {
+      "id": 13,
+      "genre": "Musical Comedy"
+    },
+    {
+      "id": 14,
+      "genre": "Observational Comedy"
+    },
+    {
+      "id": 15,
+      "genre": "One-Liners"
+    },
+    {
+      "id": 16,
+      "genre": "Physical Comedy"
+    },
+    {
+      "id": 17,
+      "genre": "Prop Comedy"
+    },
+    {
+      "id": 18,
+      "genre": "Shock Comedy"
+    },
+    {
+      "id": 19,
+      "genre": "Spoof/Parody"
+    },
+    {
+      "id": 20,
+      "genre": "Topical Comedy/Satire"
+    },
+    {
+      "id": 21,
+      "genre": "Ventriloquism"
+    },
+    {
+      "id": 22,
+      "genre": "Witty Comedy"
     }
   ]
 }
