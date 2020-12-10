@@ -6,10 +6,13 @@ import { SpecialForm } from "./specials/SpecialForm"
 import { SpecialLengthProvider } from "./SpecialDropdowns/SpecialLengthProvider"
 import { SpecialPlatformProvider } from "./SpecialDropdowns/SpecialPlatformProvider"
 import { SpecialGenreProvider } from "./SpecialDropdowns/SpecialGenreProvider"
+import { SpecialDetails } from "./specials/SpecialDetails"
+import { UserProvider } from "./users/UserProvider"
 
 export const ApplicationViews = (props) => {
     return (
         <>
+    <UserProvider>
     <SpecialGenreProvider>
     <SpecialPlatformProvider>
     <SpecialLengthProvider>
@@ -20,10 +23,17 @@ export const ApplicationViews = (props) => {
             <Route exact path ="/specials/create" render={
                 props => <SpecialForm {...props} />
             } />
+            {/* the route saves the number at the end of the URL 
+            as a variable named specialId, which is then used in SpecialDetails
+            */}
+            <Route path ="/specials/:specialId(\d+)" render={
+                props => <SpecialDetails {...props} />
+            } />
         </SpecialProvider>
     </SpecialLengthProvider>
     </SpecialPlatformProvider>
     </SpecialGenreProvider>
+    </UserProvider>
         </>
     )
 }
