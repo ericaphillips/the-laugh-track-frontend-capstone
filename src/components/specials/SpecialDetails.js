@@ -56,12 +56,12 @@ export const SpecialDetails = (props) => {
         <section className="special">
             <h3 className="special__name">{special.name}</h3>
             <div className="special__comic">Comedian: {special.comicName}</div>
-            <div className="special__userRating">User's Rating: {special.rating}</div>
+            <div className="special__userRating">{user.name}'s Rating: {special.rating}</div>
             <div className="special__length">Special's Length: {specialLength.length}</div>
             <div className="special__platform">Streaming on: {specialPlatform.platform}</div>
             <div className="special__cost">Cost: {special.cost}</div>
             <div className="special__clean">Clean? {special.clean}</div>
-            <div className="special__comments">User's Comments: {special.comments}</div>
+            <div className="special__comments">{user.name}'s Comments: {special.comments}</div>
             <div className="special__genre">Genre: {specialGenre.genre}</div>
             <div className="special__user">Input by: {user.name}</div>
         </section>
