@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react"
 import { SpecialContext } from "./SpecialProvider"
-import { Special } from "./SpecialProvider"
+import { Special } from "./Special"
 import { Link } from "react-router-dom"
 import "./Special.css"
 
@@ -16,6 +16,7 @@ export const SpecialList = (props) => {
     */
    useEffect(() => {
        getSpecials()
+       console.log(specials)
    }, [])
 
    return (
@@ -25,10 +26,15 @@ export const SpecialList = (props) => {
                Add Special
            </button>
            <article className="specialList">
-               {specials.map(special => {
-                   return <Link key={special.id} to={`/specials/${special.id}`}>
+               {specials.map(special => 
+               
+               {
+                   return <>
+                   <Link key={special.id} to={`/specials/${special.id}`}>
                        <h3>{special.name}</h3>
                    </Link>
+                   <p> {special.comicName}</p>
+                   </>
                })}
            </article>
        </div>

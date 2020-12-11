@@ -9,6 +9,7 @@ import { SpecialGenreProvider } from "./SpecialDropdowns/SpecialGenreProvider"
 import { SpecialDetails } from "./specials/SpecialDetails"
 import { UserProvider } from "./users/UserProvider"
 
+
 export const ApplicationViews = (props) => {
     return (
         <>

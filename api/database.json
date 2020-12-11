@@ -11,19 +11,23 @@
   ],
   "specials": [
     {
+      "id": 1,
       "name": "X",
       "comicName": "Daniel Sloss",
-      "rating": "0",
-      "specialLengthId": 4,
-      "specialPlatformId": 3,
+      "rating": 10,
+      "specialLengthId": 1,
+      "specialPlatformId": null,
       "cost": "subscription",
-      "clean": "0",
+      "clean": false,
       "comments": "This is the greatest comedy special I have ever seen",
-      "specialGenreId": 7,
-      "userId": 4,
-      "id": 1
+      "specialGenreId": null,
+      "userId": 4
     },
     {
+      "id": 2
+    },
+    {
+      "id": 3,
       "name": "Jigsaw",
       "comicName": "Daniel Sloss",
       "rating": "0",
@@ -31,10 +35,75 @@
       "specialPlatformId": 6,
       "cost": "Netflix Subscription",
       "clean": "0",
-      "comments": "the best",
+      "comments": "the best ever I love it so much",
       "specialGenreId": 7,
+      "userId": 4
+    },
+    {
+      "id": 4,
+      "name": "Dark",
+      "comicName": "Daniel Sloss",
+      "specialLengthId": null,
+      "specialPlatformId": null,
+      "cost": "Netflix Subscription",
+      "comments": "It's really good",
+      "specialGenreId": null,
+      "userId": 4
+    },
+    {
+      "id": 5,
+      "name": "Incorrigible",
+      "comicName": "Chris D'elia",
+      "specialLengthId": 3,
+      "specialPlatformId": null,
+      "cost": "Netflix Subscription",
+      "comments": "I love this special I'm sad he was cancelled",
+      "specialGenreId": null,
+      "userId": 4
+    },
+    {
+      "name": "Quarter Life Crisis",
+      "comicName": "Taylor Tomlinson",
+      "specialLengthId": null,
+      "specialPlatformId": null,
+      "cost": "Netflix Subscription",
+      "comments": "She's great",
+      "specialGenreId": null,
       "userId": 4,
-      "id": 3
+      "id": 6
+    },
+    {
+      "name": "Scott's Tot",
+      "comicName": "scott",
+      "specialLengthId": null,
+      "specialPlatformId": null,
+      "cost": "$1000000",
+      "comments": "never seen it tbh",
+      "specialGenreId": null,
+      "userId": 4,
+      "id": 7
+    },
+    {
+      "name": "test",
+      "comicName": "test",
+      "specialLengthId": null,
+      "specialPlatformId": null,
+      "cost": "$1000000",
+      "comments": "idk",
+      "specialGenreId": null,
+      "userId": 4,
+      "id": 8
+    },
+    {
+      "name": "newnew",
+      "comicName": "new",
+      "specialLengthId": 5,
+      "specialPlatformId": 6,
+      "cost": "Netflix Subscription",
+      "comments": "AHHH",
+      "specialGenreId": 6,
+      "userId": 4,
+      "id": 10
     }
   ],
   "specialLengths": [

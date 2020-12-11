@@ -29,7 +29,7 @@ export const SpecialProvider = (props) => {
     }
 
     const changeSpecial = special => {
-        return fetch('http://localhost:8088/specials/${special.id}', {
+        return fetch(`http://localhost:8088/specials/${special.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

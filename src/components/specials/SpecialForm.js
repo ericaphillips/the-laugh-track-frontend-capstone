@@ -16,6 +16,11 @@ export const SpecialForm = (props) => {
     //component state
     const [special, setSpecial] = useState({})
 
+
+        const specialLengthId = parseInt(special.specialLengthId)
+        const specialPlatformId = parseInt(special.specialPlatformId)
+        const specialGenreId = parseInt(special.specialGenreId)
+
     //checks for URL parameter to see if special exists
     //to differentiate between editing and adding new
     const toEdit = props.match.params.hasOwnProperty("specialId")
@@ -62,9 +67,9 @@ export const SpecialForm = (props) => {
    //get Special dropdown states on initialization
    useEffect(() => {
        getSpecials()
-       getSpecialLengths()
-        getSpecialPlatforms()
-        getSpecialGenres()
+       .then(getSpecialLengths)
+        .then(getSpecialPlatforms)
+        .then(getSpecialGenres)
    }, [])
 
    //Once the provider state is updated, see if special is to be edited
@@ -73,9 +78,8 @@ export const SpecialForm = (props) => {
    }, [specials])
 
    const addNewSpecial = () => {
-       const specialLengthId = parseInt(special.specialLengthId)
-        const specialPlatformId = parseInt(special.specialPlatformId)
-        const specialGenreId = parseInt(special.specialGenreId)
+       
+        console.log("special Genre:", specialGenreId)
         
        if (specialLengthId === 0) {
            window.alert("Please select a length for this special")
@@ -93,12 +97,12 @@ export const SpecialForm = (props) => {
                 name: special.name,
                 comicName: special.comicName,
                 rating: special.rating,
-                specialLengthId,
-                specialPlatformId,
+                specialLengthId: specialLengthId,
+                specialPlatformId: specialPlatformId,
                 cost: special.cost,
                 clean: special.clean,
                 comments: special.comments,
-                specialGenreId,
+                specialGenreId: specialGenreId,
                 userId: parseInt(localStorage.getItem("app_user_id"))
             })
             .then(() => props.history.push("/specials"))
@@ -108,12 +112,12 @@ export const SpecialForm = (props) => {
                 name: special.name,
                 comicName: special.comicName,
                 rating: special.rating,
-                specialLengthId,
-                specialPlatformId,
+                specialLengthId: specialLengthId,
+                specialPlatformId: specialPlatformId,
                 cost: special.cost,
                 clean: special.clean,
                 comments: special.comments,
-                specialGenreId,
+                specialGenreId: specialGenreId,
                 userId: parseInt(localStorage.getItem("app_user_id"))
            })
            .then(() => props.history.push("/specials"))
@@ -162,8 +166,8 @@ export const SpecialForm = (props) => {
             <fieldset>
                <div className="form-section">
                    <label htmlFor="specialLength">Special's Length: </label>
-                   <select name="length" className="form-control" 
-                   value={special.specialLengthId}
+                   <select name="specialLengthId" className="form-control" 
+                   value={specialLengthId}
                    onChange={handleSpecialEdit}>
                        <option value="0">Special's Approximate Length</option>
                        {specialLengths.map(length => (
@@ -177,8 +181,8 @@ export const SpecialForm = (props) => {
            <fieldset>
                <div className="form-section">
                    <label htmlFor="specialPlatform">Special's Platform: </label>
-                   <select name="platform" className="form-control" 
-                   value={special.specialPlatformId}
+                   <select name="specialPlatformId" className="form-control" 
+                   value={specialPlatformId}
                    onChange={handleSpecialEdit}>
                        <option value="0">Special's Platform</option>
                        {specialPlatforms.map(platform => (
@@ -201,8 +205,8 @@ export const SpecialForm = (props) => {
            <fieldset>
                <div className="form-section">
                    <label htmlFor="specialGenre">Special's Genre: </label>
-                   <select name="genre" className="form-control" 
-                   value={special.specialGenreId}
+                   <select name="specialGenreId" className="form-control" 
+                   value={specialGenreId}
                    onChange={handleSpecialEdit}>
                        <option value="0">Special's Genre</option>
                        {specialGenres.map(genre => (
