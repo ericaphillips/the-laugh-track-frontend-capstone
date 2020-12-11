@@ -29,6 +29,9 @@ export const ApplicationViews = (props) => {
             <Route path ="/specials/:specialId(\d+)" render={
                 props => <SpecialDetails {...props} />
             } />
+            <Route path ="/specials/edit/:specialId(\d+)" render={
+                props => <SpecialForm {...props} />
+            } />
         </SpecialProvider>
     </SpecialLengthProvider>
     </SpecialPlatformProvider>
