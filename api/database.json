@@ -15,16 +15,13 @@
       "name": "X",
       "comicName": "Daniel Sloss",
       "rating": 10,
-      "specialLengthId": 1,
-      "specialPlatformId": null,
-      "cost": "subscription",
+      "specialLengthId": 4,
+      "specialPlatformId": 6,
+      "cost": "Netflix Subscription",
       "clean": false,
       "comments": "This is the greatest comedy special I have ever seen",
-      "specialGenreId": null,
+      "specialGenreId": 7,
       "userId": 4
-    },
-    {
-      "id": 2
     },
     {
       "id": 3,
