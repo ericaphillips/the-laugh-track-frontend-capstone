@@ -64,6 +64,9 @@ export const SpecialDetails = (props) => {
             <div className="special__comments">{user.name}'s Comments: {special.comments}</div>
             <div className="special__genre">Genre: {specialGenre.genre}</div>
             <div className="special__user">Input by: {user.name}</div>
+            <button onClick={() => {
+                props.history.push(`/specials/edit/${special.id}`)
+            }}>Edit Special's Details</button>
         </section>
     )
 }

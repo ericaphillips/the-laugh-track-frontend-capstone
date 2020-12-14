@@ -28,9 +28,20 @@ export const SpecialProvider = (props) => {
         .then(getSpecials)
     }
 
+    const changeSpecial = special => {
+        return fetch(`http://localhost:8088/specials/${special.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(special)
+        })
+        .then(getSpecials)
+    }
+
     return (
         <SpecialContext.Provider value={{
-            specials, getSpecials, addSpecial
+            specials, getSpecials, addSpecial, changeSpecial
         }}>
             {props.children}
         </SpecialContext.Provider>

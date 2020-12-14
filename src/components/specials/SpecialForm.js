@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { SpecialContext } from "./SpecialProvider"
 import { SpecialGenreContext } from "../SpecialDropdowns/SpecialGenreProvider"
 import { SpecialLengthContext } from "../SpecialDropdowns/SpecialLengthProvider"
@@ -6,36 +6,90 @@ import { SpecialPlatformContext } from "../SpecialDropdowns/SpecialPlatformProvi
 import "./Special.css"
 
 export const SpecialForm = (props) => {
-    const { addSpecial } = useContext(SpecialContext)
+    //context providers for data
+    const { addSpecial, changeSpecial, getSpecials, specials } = useContext(SpecialContext)
     const { specialGenres, getSpecialGenres } = useContext(SpecialGenreContext)
     const { specialLengths, getSpecialLengths } = useContext(SpecialLengthContext)
     const { specialPlatforms, getSpecialPlatforms } = useContext(SpecialPlatformContext)
+
+
+    //component state
+    const [special, setSpecial] = useState({})
+
+
+    const specialLengthId = parseInt(special.specialLengthId)
+    const specialPlatformId = parseInt(special.specialPlatformId)
+    const specialGenreId = parseInt(special.specialGenreId)
+
+
+        const ratingDropdowns = () => {
+            const optionDropdownArray = [] 
+            for (let i = 1; i <= 10; i++) {
+                optionDropdownArray.push(<option key={i} value={i}>
+                    {i}
+                </option>)
+        }
+        return optionDropdownArray
+    }
+    //checks for URL parameter to see if special exists
+    //to differentiate between editing and adding new
+    const toEdit = props.match.params.hasOwnProperty("specialId")
+
+    const handleSpecialEdit = (event) => {
+        /* When changing a state object or array, create a new one
+        and change state instead of modifying current one
+        */
+        const newSpecial = Object.assign({}, special)
+        newSpecial[event.target.name] = event.target.value
+        setSpecial(newSpecial)
+    }
+
+    /*
+        If there's a specialId in the URL, the
+        user wants to edit a special
+        First, get the value of the specialId
+        Second, use that id to find the special
+        Then, update the component state variable
+    */
+   const getSpecialToEdit = () => {
+       if (toEdit) {
+           const specialId = parseInt(props.match.params.specialId)
+           const selectedSpecial = specials.find(special => special.id === specialId) || {}
+           setSpecial(selectedSpecial)
+       }
+   }
+
 
     /* Creates references that can be attached to the input fields
     in the form. Allows you to get the value of the input fields 
     when user clicks the save button
     */
-   const name = useRef(null)
-   const comicName = useRef(null)
-   const rating = useRef(null)
-   const specialLength = useRef(null)
-   const specialPlatform = useRef(null)
-   const cost = useRef(null)
-   const clean = useRef(null)
-   const comments = useRef(null)
-   const specialGenre = useRef(null)
+//    const name = useRef(null)
+//    const comicName = useRef(null)
+//    const rating = useRef(null)
+//    const specialLength = useRef(null)
+//    const specialPlatform = useRef(null)
+//    const cost = useRef(null)
+//    const clean = useRef(null)
+//    const comments = useRef(null)
+//    const specialGenre = useRef(null)
    
    //get Special dropdown states on initialization
    useEffect(() => {
-       getSpecialLengths()
-        getSpecialPlatforms()
-        getSpecialGenres()
+       getSpecials()
+       .then(getSpecialLengths)
+        .then(getSpecialPlatforms)
+        .then(getSpecialGenres)
    }, [])
 
+   //Once the provider state is updated, see if special is to be edited
+   useEffect(() => {
+       getSpecialToEdit()
+   }, [specials])
+
    const addNewSpecial = () => {
-       const specialLengthId = parseInt(specialLength.current.value)
-        const specialPlatformId = parseInt(specialPlatform.current.value)
-        const specialGenreId = parseInt(specialGenre.current.value)
+       
+        console.log("special Genre:", specialGenreId)
         
        if (specialLengthId === 0) {
            window.alert("Please select a length for this special")
@@ -43,50 +97,84 @@ export const SpecialForm = (props) => {
        if (specialPlatformId === 0) {
            window.alert("Please select a platform for this special")
        }
+       if (specialGenreId === 0) {
+        window.alert("Please select a genre for this special")
+    }
        else {
+           if (toEdit) {
+            changeSpecial({
+                id: special.id,
+                name: special.name,
+                comicName: special.comicName,
+                rating: special.rating,
+                specialLengthId: specialLengthId,
+                specialPlatformId: specialPlatformId,
+                cost: special.cost,
+                clean: special.clean,
+                comments: special.comments,
+                specialGenreId: specialGenreId,
+                userId: parseInt(localStorage.getItem("app_user_id"))
+            })
+            .then(() => props.history.push("/specials"))
+        }
+           else {
            addSpecial({
-               name: name.current.value,
-               comicName: comicName.current.value,
-               rating: rating.current.value,
-               specialLengthId,
-               specialPlatformId,
-               cost: cost.current.value,
-               clean: clean.current.value,
-               comments: comments.current.value,
-               specialGenreId,
-               userId: parseInt(localStorage.getItem("app_user_id"))
+                name: special.name,
+                comicName: special.comicName,
+                rating: special.rating,
+                specialLengthId: specialLengthId,
+                specialPlatformId: specialPlatformId,
+                cost: special.cost,
+                clean: special.clean,
+                comments: special.comments,
+                specialGenreId: specialGenreId,
+                userId: parseInt(localStorage.getItem("app_user_id"))
            })
            .then(() => props.history.push("/specials"))
        }
    }
+}
 
    return (
        <form className="specialForm">
-           <h2 className="specialForm__title">Add Special</h2>
+           <h2 className="specialForm__title">{toEdit ? "Edit Special's Details" : "Add Special"}</h2>
            <fieldset>
                <div className="form-section">
                    <label htmlFor="name">Special name: </label>
-                   <input type="text" id="name" ref={name} required autoFocus className="form-control" placeholder="Special name" />
+                   <input type="text" name="name" required autoFocus className="form-control" 
+                   placeholder="Special name" 
+                   value={special.name}
+                   onChange={handleSpecialEdit}
+                   />
                </div>
            </fieldset>
            <fieldset>
                <div className="form-section">
                    <label htmlFor="comicName">Comedian's name: </label>
-                   <input type="text" id="comicName" ref={comicName} required autoFocus className="form-control" placeholder="Comedian's name" />
+                   <input type="text" name="comicName" required autoFocus className="form-control" 
+                   placeholder="Comedian's name" 
+                   value={special.comicName}
+                   onChange={handleSpecialEdit}
+                   />
                </div>
            </fieldset>
            <fieldset>
                <div className="form-section">
                    <label htmlFor="rating">Your rating: </label>
-                   <select defaultValue="" name="rating" ref={rating} id="userRating" className="form-control">
+                   <select name="rating" className="form-control"
+                   value={special.rating}
+                   onChange={handleSpecialEdit}>
                     <option value="0">Select your rating of this special</option>
+                    {ratingDropdowns()}
                     </select>
                </div>
             </fieldset>
             <fieldset>
                <div className="form-section">
                    <label htmlFor="specialLength">Special's Length: </label>
-                   <select defaultValue="" name="length" ref={specialLength} id="specialLengthId" className="form-control" >
+                   <select name="specialLengthId" className="form-control" 
+                   value={specialLengthId}
+                   onChange={handleSpecialEdit}>
                        <option value="0">Special's Approximate Length</option>
                        {specialLengths.map(length => (
                            <option key={length.id} value={length.id}>
@@ -99,7 +187,9 @@ export const SpecialForm = (props) => {
            <fieldset>
                <div className="form-section">
                    <label htmlFor="specialPlatform">Special's Platform: </label>
-                   <select defaultValue="" name="platform" ref={specialPlatform} id="specialPlatformId" className="form-control" >
+                   <select name="specialPlatformId" className="form-control" 
+                   value={specialPlatformId}
+                   onChange={handleSpecialEdit}>
                        <option value="0">Special's Platform</option>
                        {specialPlatforms.map(platform => (
                            <option key={platform.id} value={platform.id}>
@@ -112,13 +202,18 @@ export const SpecialForm = (props) => {
            <fieldset>
                <div className="form-section">
                    <label htmlFor="cost">Special's cost: </label>
-                   <input type="text" id="cost" ref={cost} required autoFocus className="form-control" placeholder="Special's cost" />
+                   <input type="text" name="cost" required autoFocus className="form-control" 
+                   placeholder="Special's cost"
+                   value={special.cost}
+                   onChange={handleSpecialEdit}/>
                </div>
            </fieldset>
            <fieldset>
                <div className="form-section">
                    <label htmlFor="specialGenre">Special's Genre: </label>
-                   <select defaultValue="" name="genre" ref={specialGenre} id="specialGenreId" className="form-control" >
+                   <select name="specialGenreId" className="form-control" 
+                   value={specialGenreId}
+                   onChange={handleSpecialEdit}>
                        <option value="0">Special's Genre</option>
                        {specialGenres.map(genre => (
                            <option key={genre.id} value={genre.id}>
@@ -131,7 +226,9 @@ export const SpecialForm = (props) => {
            <fieldset>
                <div className="form-section">
                    <label htmlFor="rating">Is the special clean? </label>
-                   <select defaultValue="" name="clean" ref={clean} id="specialClean" className="form-control">
+                   <select name="clean" className="form-control"
+                   value={special.clean}
+                   onChange={handleSpecialEdit}>
                     <option value="0">Clean?</option>
                     </select>
                </div>
@@ -139,7 +236,10 @@ export const SpecialForm = (props) => {
             <fieldset>
                <div className="form-section">
                    <label htmlFor="comments">Your comments and additional information: </label>
-                   <textarea name="comments" id="comments" ref={comments} required autoFocus className="form-control" placeholder="Comments" />
+                   <textarea type="text" name="comments" required autoFocus className="form-control" 
+                   placeholder="Comments" 
+                   value={special.comments}
+                   onChange={handleSpecialEdit}/>
                </div>
            </fieldset>
            <button type="submit"
@@ -148,7 +248,7 @@ export const SpecialForm = (props) => {
                 addNewSpecial()
            }}
            className="button button-submit">
-               Add Special
+             {toEdit ? "Save Changes" : "Add Special"}
            </button>
        </form>
    )
