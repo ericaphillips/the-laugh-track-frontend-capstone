@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { SpecialContext } from "./SpecialProvider"
 import { SpecialGenreContext } from "../SpecialDropdowns/SpecialGenreProvider"
 import { SpecialLengthContext } from "../SpecialDropdowns/SpecialLengthProvider"
@@ -17,10 +17,20 @@ export const SpecialForm = (props) => {
     const [special, setSpecial] = useState({})
 
 
-        const specialLengthId = parseInt(special.specialLengthId)
-        const specialPlatformId = parseInt(special.specialPlatformId)
-        const specialGenreId = parseInt(special.specialGenreId)
+    const specialLengthId = parseInt(special.specialLengthId)
+    const specialPlatformId = parseInt(special.specialPlatformId)
+    const specialGenreId = parseInt(special.specialGenreId)
 
+
+        const ratingDropdowns = () => {
+            const optionDropdownArray = [] 
+            for (let i = 1; i <= 10; i++) {
+                optionDropdownArray.push(<option key={i} value={i}>
+                    {i}
+                </option>)
+        }
+        return optionDropdownArray
+    }
     //checks for URL parameter to see if special exists
     //to differentiate between editing and adding new
     const toEdit = props.match.params.hasOwnProperty("specialId")
@@ -155,11 +165,7 @@ export const SpecialForm = (props) => {
                    value={special.rating}
                    onChange={handleSpecialEdit}>
                     <option value="0">Select your rating of this special</option>
-                    {/* for (let i = 1; i <= 10; i++) {
-                        <option key={i.id} value={i.id}>
-                            {i}
-                        </option>
-                    } */}
+                    {ratingDropdowns()}
                     </select>
                </div>
             </fieldset>

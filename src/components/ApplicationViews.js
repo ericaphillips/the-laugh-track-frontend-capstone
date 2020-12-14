@@ -8,6 +8,10 @@ import { SpecialPlatformProvider } from "./SpecialDropdowns/SpecialPlatformProvi
 import { SpecialGenreProvider } from "./SpecialDropdowns/SpecialGenreProvider"
 import { SpecialDetails } from "./specials/SpecialDetails"
 import { UserProvider } from "./users/UserProvider"
+import { ComedianProvider } from "./FavoriteComedians/ComedianProvider"
+import { ComedianList } from "./FavoriteComedians/ComedianList"
+import { ComedianForm } from "./FavoriteComedians/ComedianForm"
+import { ComedianDetails } from "./FavoriteComedians/ComedianDetails"
 
 
 export const ApplicationViews = (props) => {
@@ -21,7 +25,7 @@ export const ApplicationViews = (props) => {
             <Route exact path="/specials" render={
                 props => <SpecialList {...props} />
             } />
-            <Route exact path ="/specials/create" render={
+            <Route exact path ="/specials/createNewSpecial" render={
                 props => <SpecialForm {...props} />
             } />
             {/* the route saves the number at the end of the URL 
@@ -37,6 +41,24 @@ export const ApplicationViews = (props) => {
     </SpecialLengthProvider>
     </SpecialPlatformProvider>
     </SpecialGenreProvider>
+    </UserProvider>
+
+    <UserProvider>
+        <ComedianProvider>
+            <Route exact path="/comedians" render={
+                props => <ComedianList {...props} />
+            } />
+            <Route exact path="/comedians/createNewComedian" render={
+                props => <ComedianForm {...props} />
+            } />
+
+            <Route path="/comedians/:comedianId(\d+)" render={
+                props => <ComedianDetails {...props} />
+            } />
+            <Route path="/comedians/edit/:comedianId(\d+)" render={
+                props => <ComedianForm {...props} />
+            } />
+        </ComedianProvider>
     </UserProvider>
         </>
     )

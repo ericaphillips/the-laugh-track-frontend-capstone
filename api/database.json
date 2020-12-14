@@ -19,7 +19,7 @@
       "specialPlatformId": 6,
       "cost": "Netflix Subscription",
       "clean": false,
-      "comments": "This is the greatest comedy special I have ever seen",
+      "comments": "This is the greatest comedy special I have ever seen. For real",
       "specialGenreId": 7,
       "userId": 4
     },
@@ -101,6 +101,46 @@
       "specialGenreId": 6,
       "userId": 4,
       "id": 10
+    },
+    {
+      "name": "carl",
+      "comicName": "test",
+      "rating": "8",
+      "specialLengthId": 4,
+      "specialPlatformId": 2,
+      "cost": "$1000000",
+      "comments": "yeet",
+      "specialGenreId": 9,
+      "userId": 4,
+      "id": 11
+    }
+  ],
+  "comedians": [
+    {
+      "id": 1,
+      "name": "Daniel Sloss",
+      "watched": "Dark, Jigsaw, X, everything on Youtube",
+      "toWatch": "Honestly nothing it's kinda sad",
+      "podcast": true,
+      "comments": "He's the best comedian out there right now love him",
+      "userId": 4
+    },
+    {
+      "id": 2,
+      "name": "Chris D'elia",
+      "watched": "Incorrigible, Man On Fire, No Pain for specials. TV and movies: Whitney, Alone Together, and You",
+      "toWatch": "Undateable",
+      "podcast": true,
+      "comments": "He's so funny he makes me cry with laughter every time",
+      "userId": 4
+    },
+    {
+      "id": 3,
+      "name": "Taylor Tomlinson",
+      "watched": "Quarter Life Crisis, Comedians of the World, everything on YouTube",
+      "toWatch": "I haven't watched all of her podcast episodes",
+      "comments": "She's so funny! She's so young and talented and has such a bright future. It's been really cool to watch her following grow over the past year.",
+      "userId": 4
     }
   ],
   "specialLengths": [

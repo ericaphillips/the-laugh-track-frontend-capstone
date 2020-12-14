@@ -24,7 +24,7 @@ export const SpecialList = (props) => {
    return (
        <div className="specials">
            <h1>Specials</h1>
-           <button onClick={() => props.history.push("specials/create")}>
+           <button onClick={() => props.history.push("specials/createNewSpecial")}>
                Add Special
            </button>
            <article className="specialList">
