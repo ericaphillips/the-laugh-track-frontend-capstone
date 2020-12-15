@@ -4,7 +4,7 @@ import { UserContext } from "../users/UserProvider"
 import { Special } from "../specials/Special"
 
 export const ComedianDetails = (props) => {
-    const { comedians, getComedians } = useContext(ComedianContext)
+    const { comedians, getComedians, deleteComedian } = useContext(ComedianContext)
     const { users, getUsers } = useContext(UserContext)
     
     const [comedian, setComedian] = useState({})
@@ -35,6 +35,17 @@ export const ComedianDetails = (props) => {
             <button onClick={() => {
                 props.history.push(`/comedians/edit/${comedian.id}`)
             }}>Edit Comedian's Details</button>
+            <button className="btn--release"
+                        onClick={
+                        () => {
+                            deleteComedian(comedian.id)
+                            .then(() => {
+                            props.history.push("/comedians")
+                            })
+                        }
+                        }>
+                        Delete Comedian
+                        </button>
         </section>
     )
 }

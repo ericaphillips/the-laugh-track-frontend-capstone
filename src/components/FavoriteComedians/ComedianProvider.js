@@ -39,9 +39,16 @@ export const ComedianProvider = (props) => {
         .then(getComedians)
     }
 
+    const deleteComedian = comedianId => {
+        return fetch(`http://localhost:8088/comedians/${comedianId}`, {
+        method: "DELETE"
+        })
+        .then(getComedians)
+    }
+
     return (
         <ComedianContext.Provider value={{
-            comedians, getComedians, addComedian, changeComedian
+            comedians, getComedians, addComedian, changeComedian, deleteComedian
         }}>
             {props.children}
         </ComedianContext.Provider>

@@ -9,7 +9,7 @@ import { UserContext } from "../users/UserProvider"
 
 export const ComedianList = (props) => {
     //this state changes when getComedians is invoked
-    const { comedians, getComedians } = useContext(ComedianContext)
+    const { comedians, getComedians, deleteComedian } = useContext(ComedianContext)
     const { users, getUsers } = useContext(UserContext)
 
     /* Component is mounted to the DOM,
@@ -32,8 +32,22 @@ export const ComedianList = (props) => {
                 {
                     comedians.map(comedian => {
                         const user= users.find(user => user.id === comedian.userId)
-                        return <Comedian key={comedian.id} comedian={comedian} user={user} />
+                        return (
+                            <>
+                        <Comedian key={comedian.id} comedian={comedian} user={user} />
+                        <button className="btn--release"
+            onClick={
+                () => {
+                    deleteComedian(comedian.id)
+                    .then(() => {
+                        props.history.push("/comedians")
                     })
+                }
+            }>
+            Delete Comedian
+            </button>
+            </>
+                    )})
                 }
             </article>
         </div>

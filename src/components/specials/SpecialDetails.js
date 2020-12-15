@@ -7,7 +7,7 @@ import { UserContext } from "../users/UserProvider"
 import userEvent from "@testing-library/user-event"
 
 export const SpecialDetails = (props) => {
-    const { specials, getSpecials } = useContext(SpecialContext)
+    const { specials, getSpecials, deleteSpecial } = useContext(SpecialContext)
     const { specialGenres, getSpecialGenres } = useContext(SpecialGenreContext)
     const { specialLengths, getSpecialLengths } = useContext(SpecialLengthContext)
     const { specialPlatforms, getSpecialPlatforms } = useContext(SpecialPlatformContext)
@@ -67,6 +67,17 @@ export const SpecialDetails = (props) => {
             <button onClick={() => {
                 props.history.push(`/specials/edit/${special.id}`)
             }}>Edit Special's Details</button>
+            <button className="btn--release"
+            onClick={
+                () => {
+                    deleteSpecial(special.id)
+                    .then(() => {
+                        props.history.push("/specials")
+                    })
+                }
+            }>
+            Delete Special
+            </button>
         </section>
     )
 }
