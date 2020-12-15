@@ -7,6 +7,14 @@
       "profPic": "",
       "description": "",
       "id": 4
+    },
+    {
+      "email": "test5@test5.com",
+      "password": "test",
+      "name": "tester5 tester5",
+      "profPic": "",
+      "description": "",
+      "id": 5
     }
   ],
   "specials": [
@@ -70,49 +78,16 @@
       "id": 6
     },
     {
-      "name": "Scott's Tot",
-      "comicName": "scott",
-      "specialLengthId": null,
-      "specialPlatformId": null,
-      "cost": "$1000000",
-      "comments": "never seen it tbh",
-      "specialGenreId": null,
-      "userId": 4,
-      "id": 7
-    },
-    {
-      "name": "test",
-      "comicName": "test",
-      "specialLengthId": null,
-      "specialPlatformId": null,
-      "cost": "$1000000",
-      "comments": "idk",
-      "specialGenreId": null,
-      "userId": 4,
-      "id": 8
-    },
-    {
-      "name": "newnew",
-      "comicName": "new",
-      "specialLengthId": 5,
+      "name": "Man On Fire",
+      "comicName": "Chris D'elia",
+      "rating": "7",
+      "specialLengthId": 4,
       "specialPlatformId": 6,
       "cost": "Netflix Subscription",
-      "comments": "AHHH",
-      "specialGenreId": 6,
-      "userId": 4,
-      "id": 10
-    },
-    {
-      "name": "carl",
-      "comicName": "test",
-      "rating": "8",
-      "specialLengthId": 4,
-      "specialPlatformId": 2,
-      "cost": "$1000000",
-      "comments": "yeet",
-      "specialGenreId": 9,
-      "userId": 4,
-      "id": 11
+      "comments": "This is really funny! It's not my favorite by him but I do love it",
+      "specialGenreId": 16,
+      "userId": 5,
+      "id": 7
     }
   ],
   "comedians": [
@@ -141,6 +116,14 @@
       "toWatch": "I haven't watched all of her podcast episodes",
       "comments": "She's so funny! She's so young and talented and has such a bright future. It's been really cool to watch her following grow over the past year.",
       "userId": 4
+    },
+    {
+      "name": "Adrienne Iapalucci",
+      "watched": "Degenerates special",
+      "toWatch": "Anything on YouTube",
+      "comments": "She's so funny, her Ted Bundy is a hero bit had me dying!",
+      "userId": 5,
+      "id": 4
     }
   ],
   "specialLengths": [
