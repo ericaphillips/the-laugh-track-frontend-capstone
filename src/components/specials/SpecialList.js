@@ -10,7 +10,7 @@ object to the special
 */
 export const SpecialList = (props) => {
     //this state changes when getSpecials is invoked
-    const { specials, getSpecials } = useContext(SpecialContext)
+    const { specials, getSpecials, deleteSpecial } = useContext(SpecialContext)
     const { users, getUsers } = useContext(UserContext)
 
     /* Component is mounted to the DOM, React renders
@@ -31,8 +31,22 @@ export const SpecialList = (props) => {
                {
                specials.map(special => {
                const user= users.find(user => user.id === special.userId)
-               return <Special key={special.id} special={special} user={user} />
-               })
+               return (
+               <>
+               <Special key={special.id} special={special} user={user} />
+               <button className="btn--release"
+            onClick={
+                () => {
+                    deleteSpecial(special.id)
+                    .then(() => {
+                        props.history.push("/specials")
+                    })
+                }
+            }>
+            Delete Special
+            </button>
+               </>
+               )})
             }
            </article>
        </div>
