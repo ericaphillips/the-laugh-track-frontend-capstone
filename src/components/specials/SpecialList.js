@@ -14,7 +14,7 @@ export const SpecialList = (props) => {
     const { users, getUsers } = useContext(UserContext)
 
     const currentUser = parseInt(localStorage.getItem("app_user_id"))
-    
+
     /* Component is mounted to the DOM, React renders
     blank HTML first, gets data, then re-renders
     */
