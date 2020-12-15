@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 export const Special = ({ special, user }) => (
     <section className="special">
         <h4 className="special__name">
-            <Link to={`specials/${special.id}`}>
+            <Link to={`/specials/${special.id}`}>
                 { special.name }
             </Link>
         </h4>

@@ -12,6 +12,8 @@ export const ComedianList = (props) => {
     const { comedians, getComedians, deleteComedian } = useContext(ComedianContext)
     const { users, getUsers } = useContext(UserContext)
 
+    const currentUser = parseInt(localStorage.getItem("app_user_id"))
+
     /* Component is mounted to the DOM,
     react renders blank HTML first,
     then re-renders
@@ -25,7 +27,7 @@ export const ComedianList = (props) => {
     return (
         <div className="comedians">
             <h1>Comedians</h1>
-            <button onClick={() => props.history.push("comedians/createNewComedian")}>
+            <button onClick={() => props.history.push("/comedians/createNewComedian")}>
                 Add a Favorite Comedian
             </button>
             <article className="comedianList">
@@ -35,17 +37,19 @@ export const ComedianList = (props) => {
                         return (
                             <>
                         <Comedian key={comedian.id} comedian={comedian} user={user} />
+                        {currentUser === parseInt(comedian.userId)  && 
                         <button className="btn--release"
-            onClick={
-                () => {
-                    deleteComedian(comedian.id)
-                    .then(() => {
-                        props.history.push("/comedians")
-                    })
-                }
-            }>
-            Delete Comedian
-            </button>
+                        onClick={
+                        () => {
+                            deleteComedian(comedian.id)
+                            .then(() => {
+                            props.history.push("/comedians")
+                            })
+                        }
+                        }>
+                        Delete Comedian
+                        </button>
+                    }
             </>
                     )})
                 }

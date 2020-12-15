@@ -19,6 +19,8 @@ export const SpecialDetails = (props) => {
     const [specialPlatform, setSpecialPlatform] = useState({})
     const [user, setUser] = useState({})
 
+    const currentUser = parseInt(localStorage.getItem("app_user_id"))
+
     useEffect(() => {
         getSpecials()
         .then(getSpecialGenres)
@@ -53,6 +55,7 @@ export const SpecialDetails = (props) => {
     }, [specials])
 
     return (
+        <>
         <section className="special">
             <h3 className="special__name">{special.name}</h3>
             <div className="special__comic">Comedian: {special.comicName}</div>
@@ -64,9 +67,14 @@ export const SpecialDetails = (props) => {
             <div className="special__comments">{user.name}'s Comments: {special.comments}</div>
             <div className="special__genre">Genre: {specialGenre.genre}</div>
             <div className="special__user">Input by: {user.name}</div>
+            
+        {currentUser === parseInt(special.userId)  && 
             <button onClick={() => {
                 props.history.push(`/specials/edit/${special.id}`)
             }}>Edit Special's Details</button>
+        }
+
+        {currentUser === parseInt(special.userId)  && 
             <button className="btn--release"
             onClick={
                 () => {
@@ -78,6 +86,8 @@ export const SpecialDetails = (props) => {
             }>
             Delete Special
             </button>
+}
         </section>
+        </>
     )
 }

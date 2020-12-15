@@ -10,6 +10,8 @@ export const ComedianDetails = (props) => {
     const [comedian, setComedian] = useState({})
     const [user, setUser] = useState({})
 
+    const currentUser = parseInt(localStorage.getItem("app_user_id"))
+
     useEffect(() => {
         getComedians()
         .then(getUsers)
@@ -32,9 +34,14 @@ export const ComedianDetails = (props) => {
             <div className="comedian__toWatch">{user.name}'s To Watch List: {comedian.toWatch}</div>
             <div className="comedian__podcast">Does this comedian have a podcast? {comedian.podcast}</div>
             <div className="comedian__comments">{user.name}'s Comments: {comedian.comments}</div>
+            
+    {currentUser === parseInt(comedian.userId)  && 
             <button onClick={() => {
                 props.history.push(`/comedians/edit/${comedian.id}`)
             }}>Edit Comedian's Details</button>
+        }
+        
+    {currentUser === parseInt(comedian.userId)  && 
             <button className="btn--release"
                         onClick={
                         () => {
@@ -46,6 +53,8 @@ export const ComedianDetails = (props) => {
                         }>
                         Delete Comedian
                         </button>
+}
+
         </section>
     )
 }

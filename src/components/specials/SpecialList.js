@@ -13,6 +13,8 @@ export const SpecialList = (props) => {
     const { specials, getSpecials, deleteSpecial } = useContext(SpecialContext)
     const { users, getUsers } = useContext(UserContext)
 
+    const currentUser = parseInt(localStorage.getItem("app_user_id"))
+    
     /* Component is mounted to the DOM, React renders
     blank HTML first, gets data, then re-renders
     */
@@ -34,6 +36,8 @@ export const SpecialList = (props) => {
                return (
                <>
                <Special key={special.id} special={special} user={user} />
+               
+               {currentUser === parseInt(special.userId)  && 
                <button className="btn--release"
             onClick={
                 () => {
@@ -45,6 +49,7 @@ export const SpecialList = (props) => {
             }>
             Delete Special
             </button>
+               }
                </>
                )})
             }

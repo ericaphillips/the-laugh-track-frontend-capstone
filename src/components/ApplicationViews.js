@@ -12,6 +12,7 @@ import { ComedianProvider } from "./FavoriteComedians/ComedianProvider"
 import { ComedianList } from "./FavoriteComedians/ComedianList"
 import { ComedianForm } from "./FavoriteComedians/ComedianForm"
 import { ComedianDetails } from "./FavoriteComedians/ComedianDetails"
+import { UserPage } from "./users/UserPage"
 
 
 export const ApplicationViews = (props) => {
@@ -60,6 +61,16 @@ export const ApplicationViews = (props) => {
             } />
         </ComedianProvider>
     </UserProvider>
+    
+    <ComedianProvider>
+    <SpecialProvider>
+        <UserProvider>
+        <Route path="/users/:userId(\d+)" render={
+                props => <UserPage {...props} />
+            } />
+        </UserProvider>
+    </SpecialProvider>
+    </ComedianProvider>
         </>
     )
 }
