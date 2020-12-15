@@ -39,9 +39,16 @@ export const SpecialProvider = (props) => {
         .then(getSpecials)
     }
 
+    const deleteSpecial = specialId => {
+        return fetch(`http://localhost:8088/specials/${specialId}`, {
+            method: "DELETE"
+        })
+        .then(getSpecials)
+    }
+
     return (
         <SpecialContext.Provider value={{
-            specials, getSpecials, addSpecial, changeSpecial
+            specials, getSpecials, addSpecial, changeSpecial, deleteSpecial
         }}>
             {props.children}
         </SpecialContext.Provider>
