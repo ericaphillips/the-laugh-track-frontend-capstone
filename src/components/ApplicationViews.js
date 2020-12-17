@@ -13,6 +13,7 @@ import { ComedianList } from "./FavoriteComedians/ComedianList"
 import { ComedianForm } from "./FavoriteComedians/ComedianForm"
 import { ComedianDetails } from "./FavoriteComedians/ComedianDetails"
 import { UserPage } from "./users/UserPage"
+import { UserForm } from "./users/UserInfoForm"
 
 
 export const ApplicationViews = (props) => {
@@ -67,6 +68,9 @@ export const ApplicationViews = (props) => {
         <UserProvider>
         <Route path="/users/:userId(\d+)" render={
                 props => <UserPage {...props} />
+            } />
+        <Route path="/users/edit/:userId(\d+)" render={
+                props => <UserForm {...props} />
             } />
         </UserProvider>
     </SpecialProvider>

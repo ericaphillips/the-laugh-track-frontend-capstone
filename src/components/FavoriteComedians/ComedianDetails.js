@@ -11,7 +11,7 @@ export const ComedianDetails = (props) => {
     const [user, setUser] = useState({})
 
     const currentUser = parseInt(localStorage.getItem("app_user_id"))
-
+    console.log("props history", props.history)
     useEffect(() => {
         getComedians()
         .then(getUsers)

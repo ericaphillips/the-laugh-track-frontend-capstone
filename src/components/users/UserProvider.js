@@ -16,9 +16,35 @@ export const UserProvider = (props) => {
         .then(setUsers)
     }
 
+    const addProfPic = (id, profPic) => {
+        return fetch(`http://localhost:8088/users/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(
+                profPic
+            )
+        })
+        .then(getUsers)
+    }
+
+    const addDescription = (id, description) => {
+        return fetch(`http://localhost:8088/users/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(
+                description
+            )
+        })
+        .then(getUsers)
+    }
+
     return (
         <UserContext.Provider value={{
-            users, getUsers
+            users, getUsers, addProfPic, addDescription
         }}>
         {props.children}
         </UserContext.Provider>

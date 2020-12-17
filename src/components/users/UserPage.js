@@ -30,15 +30,20 @@ export const UserPage = (props) => {
     useEffect (() => {
         const userSpecials = specials.filter(specials => specials.userId === parseInt(props.match.params.userId)) || {}
         setUserSpecials(userSpecials)
-    }, [userSpecials])  
+    }, [specials])  
 
     useEffect (() => {
         const userComedians = comedians.filter(comedians => comedians.userId === parseInt(props.match.params.userId)) || {}
         setUserComedians(userComedians)
-    }, [userComedians])
+    }, [comedians])
 
     return (
         <>
+        {currentUser === parseInt(props.match.params.userId)  && 
+         <button onClick={() => props.history.push(`/users/edit/${currentUser}`)}>
+              Edit User
+           </button>
+        }
         <section className="users__specials">
         <h1>{user.name}'s Watched Specials</h1>
         <div className="user__Specials">
