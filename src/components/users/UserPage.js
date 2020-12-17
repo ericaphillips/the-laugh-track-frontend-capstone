@@ -4,17 +4,22 @@ import { ComedianContext } from "../FavoriteComedians/ComedianProvider"
 import { UserContext } from "./UserProvider"
 import { Special } from "../specials/Special"
 import { Comedian } from "../FavoriteComedians/Comedian"
+import { UserInfo } from "./UserInfo"
+
 
 export const UserPage = (props) => {
-    const { specials, getSpecials, deleteSpecial, changeSpecial } = useContext(SpecialContext)
+    const { specials, getSpecials, deleteSpecial, changeSpecial, sortSpecialsNumAsc, sortSpecialsNumDesc } = useContext(SpecialContext)
     const { comedians, getComedians, deleteComedian, changeComedian } = useContext(ComedianContext)
-    const { users, getUsers } = useContext(UserContext)
+    const { users, getUsers, usersRatingAsc, setUsersRatingAsc } = useContext(UserContext)
 
     const [ user, setUser ] = useState([])
     const [ userSpecials, setUserSpecials ] = useState([])
     const [ userComedians, setUserComedians ] = useState([]) 
+    
+    
 
     const currentUser = parseInt(localStorage.getItem("app_user_id"))
+
 
     useEffect(() => {
         getUsers()
@@ -44,8 +49,32 @@ export const UserPage = (props) => {
               Edit User
            </button>
         }
+        <section className="users__info">
+            <h1>About {user.name}</h1>
+            <div className="user__Info">
+                <UserInfo key={user.id} user={user} />
+            </div>
+        </section>
         <section className="users__specials">
         <h1>{user.name}'s Watched Specials</h1>
+        <form className="specialDropdown">
+            <div className="specialDropdown__header">Sort by:</div>
+            <fieldset>
+                <div className="specialDropdown__options">
+                <select name="sort__special" className="form-control">
+                    <option value="0">Sort By:</option>
+                    <option value="Rating Ascending" onSelect={event => {
+                        event.preventDefault()
+                        SortSpecialsByNumAsc()}}>Rating Ascending</option>
+                    <option value="Rating Descending">Rating Descending</option>
+                    </select>
+                        <button type="submit" 
+                        onClick={event => {
+                        event.preventDefault()
+                        SortSpecialsByNumAsc()}}>Sort</button>
+                </div>
+            </fieldset>
+        </form>
         <div className="user__Specials">
             {
                 userSpecials.map(special => {

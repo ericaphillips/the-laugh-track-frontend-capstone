@@ -6,6 +6,10 @@ export const ComedianForm = (props) => {
     //context provider for data
     const { addComedian, changeComedian, getComedians, comedians } = useContext(ComedianContext)
 
+
+    let podcastStatus = false
+    
+
     //component state
     const [comedian, setComedian] = useState({})
 
@@ -54,7 +58,7 @@ export const ComedianForm = (props) => {
                name: comedian.name,
                watched: comedian.watched,
                toWatch: comedian.toWatch,
-               podcast: comedian.podcast,
+               podcast: podcastStatus.toString(),
                comments: comedian.comments,
                userId: parseInt(localStorage.getItem("app_user_id"))
            })
@@ -65,13 +69,17 @@ export const ComedianForm = (props) => {
             name: comedian.name,
             watched: comedian.watched,
             toWatch: comedian.toWatch,
-            podcast: comedian.podcast,
+            podcast: podcastStatus.toString(),
             comments: comedian.comments,
             userId: parseInt(localStorage.getItem("app_user_id"))
            })
            .then(() => props.history.push("/comedians"))
        }
    }
+   
+   const podcast= (event) => {
+    return podcastStatus = event.target.checked
+}
 
    return (
        <form className="comedianForm">
@@ -108,12 +116,14 @@ export const ComedianForm = (props) => {
             </fieldset>
             <fieldset>
                 <div className="form-section">
-                    <label htmlFor="podcast">Do they have a podcast? </label>
-                    <select name="podcast" className="form-control"
-                    value={comedian.podcast}
-                    onChange={handleComedianEdit}>
-                        <option value="0">Podcast?</option>
-                    </select>
+                    <label htmlFor="podcast">Do they have a podcast? Check if yes: </label>
+                    <input
+                    name="podcast"
+                    type="checkbox" 
+                    onChange={event => {
+                        podcast(event)
+                    }}
+                    />
                 </div>
             </fieldset>
             <fieldset>
