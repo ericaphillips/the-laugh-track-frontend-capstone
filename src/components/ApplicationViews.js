@@ -13,6 +13,7 @@ import { ComedianProvider } from "./FavoriteComedians/ComedianProvider"
 import { ComedianList } from "./FavoriteComedians/ComedianList"
 import { ComedianForm } from "./FavoriteComedians/ComedianForm"
 import { ComedianDetails } from "./FavoriteComedians/ComedianDetails"
+import { ComedianSearch } from "./FavoriteComedians/ComedianSearch"
 import { UserPage } from "./users/UserPage"
 import { UserForm } from "./users/UserInfoForm"
 
@@ -52,7 +53,10 @@ export const ApplicationViews = (props) => {
     <UserProvider>
         <ComedianProvider>
             <Route exact path="/comedians" render={
-                props => <ComedianList {...props} />
+                props => <>
+                <ComedianSearch />
+                <ComedianList {...props} />
+                </>
             } />
             <Route exact path="/comedians/createNewComedian" render={
                 props => <ComedianForm {...props} />

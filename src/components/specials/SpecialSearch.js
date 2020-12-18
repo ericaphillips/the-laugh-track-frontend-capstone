@@ -13,7 +13,7 @@ export const SpecialSearch = (props) => {
         onKeyUp={
             (keyEvent) => setSearch(keyEvent.target.value)
         }
-        placeholder="Filter specials by search terms" />
+        placeholder="Filter special names" />
         </>
     )
 }

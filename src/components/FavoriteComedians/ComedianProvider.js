@@ -10,6 +10,7 @@ export const ComedianContext = React.createContext()
 //provider establishes what data can be used in return statement
 export const ComedianProvider = (props) => {
     const [comedians, setComedians] = useState ([])
+    const [ searchTerms, setSearch ] = useState("")
 
     const getComedians = () => {
         return fetch("http://localhost:8088/comedians")
@@ -60,7 +61,7 @@ export const ComedianProvider = (props) => {
 
     return (
         <ComedianContext.Provider value={{
-            comedians, getComedians, addComedian, changeComedian, deleteComedian, sortComedianNameAsc, sortComedianChronoAsc
+            comedians, getComedians, addComedian, changeComedian, deleteComedian, sortComedianNameAsc, sortComedianChronoAsc, searchTerms, setSearch
         }}>
             {props.children}
         </ComedianContext.Provider>
