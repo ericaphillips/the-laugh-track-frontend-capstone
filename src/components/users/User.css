@@ -1,0 +1,45 @@
+.users__page {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+} 
+
+.users__info {
+    border: 1px solid rgb(97, 97, 97);
+    margin: 10px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    flex-basis: 25%;
+}
+
+.users__specials {
+    border: 1px solid rgb(97, 97, 97);
+    margin: 10px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    flex-basis: 25%;
+}
+
+.users__comedians {
+    border: 1px solid rgb(97, 97, 97);
+    margin: 10px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    flex-basis: 25%;
+}
+
+.user__Specials {
+    border: 1px solid rgb(97, 97, 97);
+    margin: 10px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    flex-basis: 25%;
+}
+
+.user__Comedians {
+    border: 1px solid rgb(97, 97, 97);
+    margin: 10px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    flex-basis: 25%;
+}

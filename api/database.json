@@ -31,17 +31,17 @@
       "id": 7
     },
     {
-      "id": 10,
-      "name": "carl",
-      "comicName": "test",
+      "name": "X",
+      "comicName": "Daniel Sloss",
       "rating": 10,
-      "specialLengthId": 6,
-      "specialPlatformId": 3,
-      "cost": "Netflix Subscription",
-      "clean": "true",
-      "comments": "ewfewfwe",
-      "specialGenreId": 12,
-      "userId": 4
+      "specialLengthId": 5,
+      "specialPlatformId": 4,
+      "cost": "HBO Subscription",
+      "clean": "false",
+      "comments": "This is the greatest comedy special! I think it should be required viewing for everyone.",
+      "specialGenreId": 7,
+      "userId": 4,
+      "id": 8
     }
   ],
   "comedians": [
@@ -63,22 +63,22 @@
       "userId": 4
     },
     {
+      "id": 6,
       "name": "Ryan O'Flanagan",
       "watched": "Overly Excited Tourist on YouTube, saw him at Zanies and on Parahoy",
       "toWatch": "Anything I can he is amazing",
       "podcast": "false",
-      "comments": "YOU GOTTA BE JOKING MY ASS",
-      "userId": 4,
-      "id": 6
+      "comments": "he's the funniest and his OVerly Excited Tourist videos are the best",
+      "userId": 4
     },
     {
+      "id": 7,
       "name": "Taylor Tomlinson",
       "watched": "Quarter Life Crisis, Comedians of the World, everything on YouTube",
       "toWatch": "I haven't watched all of her podcast episodes",
-      "podcast": "false",
+      "podcast": "true",
       "comments": "She's so funny! She's so young and talented and has such a bright future. It's been really cool to watch her following grow over the past year",
-      "userId": 4,
-      "id": 7
+      "userId": 4
     }
   ],
   "specialLengths": [
