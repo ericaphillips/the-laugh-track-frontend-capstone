@@ -31,29 +31,16 @@
       "id": 7
     },
     {
-      "name": "X",
-      "comicName": "Daniel Sloss",
-      "rating": "10",
-      "specialLengthId": 5,
-      "specialPlatformId": 4,
-      "cost": "HBO Subscription",
-      "clean": "false",
-      "comments": "This is my favorite comedy special of all time! I think it should be required viewing for all!",
-      "specialGenreId": 7,
-      "userId": 4,
-      "id": 8
-    },
-    {
-      "id": 9,
-      "name": "The Tennessee Kid",
-      "comicName": "Nate Bargatze",
-      "rating": "8",
-      "specialLengthId": 4,
-      "specialPlatformId": 6,
+      "id": 10,
+      "name": "carl",
+      "comicName": "test",
+      "rating": 10,
+      "specialLengthId": 6,
+      "specialPlatformId": 3,
       "cost": "Netflix Subscription",
-      "clean": "false",
-      "comments": "He's so funny!",
-      "specialGenreId": 14,
+      "clean": "true",
+      "comments": "ewfewfwe",
+      "specialGenreId": 12,
       "userId": 4
     }
   ],
@@ -67,13 +54,13 @@
       "id": 4
     },
     {
+      "id": 5,
       "name": "Daniel Sloss",
       "watched": "X, Jigsaw, Dark, Hubris, everything on YouTube",
       "toWatch": "Nothing I've consumed all content possible",
-      "podcast": "false",
+      "podcast": "true",
       "comments": "He's the best comedian out there right now love him. ",
-      "userId": 4,
-      "id": 5
+      "userId": 4
     },
     {
       "name": "Ryan O'Flanagan",

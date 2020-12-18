@@ -7,6 +7,7 @@ import { SpecialLengthProvider } from "./SpecialDropdowns/SpecialLengthProvider"
 import { SpecialPlatformProvider } from "./SpecialDropdowns/SpecialPlatformProvider"
 import { SpecialGenreProvider } from "./SpecialDropdowns/SpecialGenreProvider"
 import { SpecialDetails } from "./specials/SpecialDetails"
+import { SpecialSearch } from "./specials/SpecialSearch"
 import { UserProvider } from "./users/UserProvider"
 import { ComedianProvider } from "./FavoriteComedians/ComedianProvider"
 import { ComedianList } from "./FavoriteComedians/ComedianList"
@@ -25,7 +26,10 @@ export const ApplicationViews = (props) => {
     <SpecialLengthProvider>
         <SpecialProvider>
             <Route exact path="/specials" render={
-                props => <SpecialList {...props} />
+                props => <>
+                <SpecialSearch />
+                <SpecialList {...props} />
+                </>
             } />
             <Route exact path ="/specials/createNewSpecial" render={
                 props => <SpecialForm {...props} />
@@ -67,7 +71,8 @@ export const ApplicationViews = (props) => {
     <SpecialProvider>
         <UserProvider>
         <Route path="/users/:userId(\d+)" render={
-                props => <UserPage {...props} />
+                props =>
+                 <UserPage {...props} />
             } />
         <Route path="/users/edit/:userId(\d+)" render={
                 props => <UserForm {...props} />

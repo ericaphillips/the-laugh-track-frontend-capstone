@@ -22,10 +22,7 @@ export const SpecialForm = (props) => {
     const specialGenreId = parseInt(special.specialGenreId)
 
     let cleanStatus = false
-    const clean = (event) => {
-        return cleanStatus = event.target.checked
-    }
-    const cleanStatusString = cleanStatus.toString()
+    
 
 
         const ratingDropdowns = () => {
@@ -105,7 +102,7 @@ export const SpecialForm = (props) => {
                 specialLengthId: specialLengthId,
                 specialPlatformId: specialPlatformId,
                 cost: special.cost,
-                clean: cleanStatusString,
+                clean: cleanStatus.toString(),
                 comments: special.comments,
                 specialGenreId: specialGenreId,
                 userId: parseInt(localStorage.getItem("app_user_id"))
@@ -116,11 +113,11 @@ export const SpecialForm = (props) => {
            addSpecial({
                 name: special.name,
                 comicName: special.comicName,
-                rating: special.rating,
+                rating: parseInt(special.rating),
                 specialLengthId: specialLengthId,
                 specialPlatformId: specialPlatformId,
                 cost: special.cost,
-                clean: cleanStatusString,
+                clean: cleanStatus.toString(),
                 comments: special.comments,
                 specialGenreId: specialGenreId,
                 userId: parseInt(localStorage.getItem("app_user_id"))
@@ -129,6 +126,10 @@ export const SpecialForm = (props) => {
        }
    }
 }
+   const clean = (event) => {
+    return cleanStatus = event.target.checked
+    }
+
 
    return (
        <form className="specialForm">

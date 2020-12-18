@@ -5,10 +5,11 @@ import { UserContext } from "./UserProvider"
 import { Special } from "../specials/Special"
 import { Comedian } from "../FavoriteComedians/Comedian"
 import { UserInfo } from "./UserInfo"
+import { SpecialsDropdown } from "../SortingDropdowns/SpecialSort"
 
 
 export const UserPage = (props) => {
-    const { specials, getSpecials, deleteSpecial, changeSpecial, sortSpecialsNumAsc, sortSpecialsNumDesc } = useContext(SpecialContext)
+    const { specials, getSpecials, deleteSpecial, searchTerms, sortSpecialsNumAsc, sortSpecialsNumDesc } = useContext(SpecialContext)
     const { comedians, getComedians, deleteComedian, changeComedian } = useContext(ComedianContext)
     const { users, getUsers, usersRatingAsc, setUsersRatingAsc } = useContext(UserContext)
 
@@ -19,6 +20,7 @@ export const UserPage = (props) => {
     
 
     const currentUser = parseInt(localStorage.getItem("app_user_id"))
+    // const [ filteredSpecials, setFiltered ] = useState([])
 
 
     useEffect(() => {
@@ -36,6 +38,17 @@ export const UserPage = (props) => {
         const userSpecials = specials.filter(specials => specials.userId === parseInt(props.match.params.userId)) || {}
         setUserSpecials(userSpecials)
     }, [specials])  
+
+//     useEffect (() => {
+//         if (searchTerms !== "") {
+//         //if search field isn't blank, show searched specials
+//         const filtered = userSpecials.filter(special => special.name.toLowerCase().includes(searchTerms))
+//         setFiltered(filtered)
+//     } else {
+//         //if search field is empty
+//         setFiltered(userSpecials)
+//     }
+//  }, [searchTerms, specials])
 
     useEffect (() => {
         const userComedians = comedians.filter(comedians => comedians.userId === parseInt(props.match.params.userId)) || {}
@@ -57,7 +70,8 @@ export const UserPage = (props) => {
         </section>
         <section className="users__specials">
         <h1>{user.name}'s Watched Specials</h1>
-        <form className="specialDropdown">
+        <SpecialsDropdown />
+        {/* <form className="specialDropdown">
             <div className="specialDropdown__header">Sort by:</div>
             <fieldset>
                 <div className="specialDropdown__options">
@@ -74,13 +88,16 @@ export const UserPage = (props) => {
                         SortSpecialsByNumAsc()}}>Sort</button>
                 </div>
             </fieldset>
-        </form>
+        </form> */}
         <div className="user__Specials">
             {
                 userSpecials.map(special => {
                     return (
                     <>
                     <Special key={special.id} special={special} user={user} />
+                    <button onClick={() => {
+                        props.history.push(`/specials/${special.id}`)
+                        }}>View Special's Details</button>
                     {currentUser === parseInt(special.userId)  && 
                <button className="btn--release"
             onClick={
@@ -114,6 +131,9 @@ export const UserPage = (props) => {
                         return (
                         <>
                         <Comedian key={comedian.id} comedian={comedian} user={user} />
+                        <button onClick={() => {
+                        props.history.push(`/comedians/${comedian.id}`)
+                        }}>View Comedian's Details</button>
                         {currentUser === parseInt(comedian.userId)  && 
                         <button className="btn--release"
                         onClick={
