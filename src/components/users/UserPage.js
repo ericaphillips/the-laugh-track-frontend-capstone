@@ -6,6 +6,7 @@ import { Special } from "../specials/Special"
 import { Comedian } from "../FavoriteComedians/Comedian"
 import { UserInfo } from "./UserInfo"
 import { SpecialsDropdown } from "../SortingDropdowns/SpecialSort"
+import "./User.css"
 
 
 export const UserPage = (props) => {
@@ -62,6 +63,8 @@ export const UserPage = (props) => {
               Edit User
            </button>
         }
+
+        <section className="users__page">
         <section className="users__info">
             <h1>About {user.name}</h1>
             <div className="user__Info">
@@ -125,7 +128,7 @@ export const UserPage = (props) => {
         </section>
         <section className="users__comedians">
             <h1>{user.name}'s Favorite Comedians</h1>
-            <div className="user__Comedians">
+            <div className="users__comedians">
                 {
                     userComedians.map(comedian => {
                         return (
@@ -157,6 +160,7 @@ export const UserPage = (props) => {
                 Add a Favorite Comedian
             </button>
             }
+        </section>
         </section>
         </>
     )
