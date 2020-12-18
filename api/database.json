@@ -19,16 +19,17 @@
   ],
   "specials": [
     {
+      "id": 7,
       "name": "Man On Fire",
       "comicName": "Chris D'elia",
       "rating": "7",
       "specialLengthId": 4,
       "specialPlatformId": 6,
       "cost": "Netflix Subscription",
+      "clean": "false",
       "comments": "This is really funny! It's not my favorite by him but I do love it",
       "specialGenreId": 16,
-      "userId": 5,
-      "id": 7
+      "userId": 5
     },
     {
       "name": "X",
@@ -46,12 +47,13 @@
   ],
   "comedians": [
     {
+      "id": 4,
       "name": "Adrienne Iapalucci",
       "watched": "Degenerates special",
       "toWatch": "Anything on YouTube",
+      "podcast": "true",
       "comments": "She's so funny, her Ted Bundy is a hero bit had me dying!",
-      "userId": 5,
-      "id": 4
+      "userId": 5
     },
     {
       "id": 5,

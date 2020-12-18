@@ -7,6 +7,8 @@ import { Comedian } from "../FavoriteComedians/Comedian"
 import { UserInfo } from "./UserInfo"
 import { SpecialsDropdown } from "../SortingDropdowns/SpecialSort"
 import "./User.css"
+// import "../FavoriteComedians/Comedian.css"
+// import "../specials/Special.css"
 
 
 export const UserPage = (props) => {
