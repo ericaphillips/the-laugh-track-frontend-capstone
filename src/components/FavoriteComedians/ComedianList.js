@@ -1,5 +1,5 @@
 //List of comedians. Renders on /comedians and on a user's page, but only the comedian's they've entered
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { ComedianContext } from "./ComedianProvider"
 import { Comedian } from "./Comedian"
 import "./Comedian.css"
@@ -11,10 +11,13 @@ a property object to the comedian
 */
 
 export const ComedianList = (props) => {
-    const { comedians, getComedians, deleteComedian } = useContext(ComedianContext)
+    const { comedians, getComedians, deleteComedian, searchTerms } = useContext(ComedianContext)
     const { users, getUsers } = useContext(UserContext)
 
     const currentUser = parseInt(localStorage.getItem("app_user_id"))
+
+    //since no longer displaying all comedians
+    const [ filteredComedians, setFiltered ] = useState([])
 
     /* Component is mounted to the DOM,
     react renders blank HTML first,
@@ -26,6 +29,17 @@ export const ComedianList = (props) => {
         .then(getComedians)
     }, [])
 
+    useEffect (() => {
+        if (searchTerms !== "") {
+        //if search field isn't blank, show searched specials
+        const filtered = comedians.filter(comedian => comedian.name.toLowerCase().includes(searchTerms))
+        setFiltered(filtered)
+    } else {
+        //if search field is empty
+        setFiltered(comedians)
+    }
+ }, [searchTerms, comedians])
+
     return (
         <div className="comedians">
             <h1>Comedians</h1>
@@ -34,7 +48,7 @@ export const ComedianList = (props) => {
             </button>
             <article className="comedianList">
                 {
-                    comedians.map(comedian => {
+                    filteredComedians.map(comedian => {
                         const user= users.find(user => user.id === comedian.userId)
                         return (
                             <>
