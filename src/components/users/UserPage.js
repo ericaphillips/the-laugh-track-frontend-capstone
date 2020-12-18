@@ -128,7 +128,7 @@ export const UserPage = (props) => {
         </section>
         <section className="users__comedians">
             <h1>{user.name}'s Favorite Comedians</h1>
-            <div className="users__comedians">
+            <div className="user__Comedians">
                 {
                     userComedians.map(comedian => {
                         return (
