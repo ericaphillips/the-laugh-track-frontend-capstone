@@ -1,0 +1,36 @@
+.special {
+    padding-top: 1em;
+}
+
+.special__userRating {
+    padding-top: 2px;
+}
+
+.special__length {
+    padding-top: 2px;
+}
+
+.special__platform {
+    padding-top: 2px;
+}
+
+.special__cost {
+    padding-top: 2px;
+}
+
+.special__clean {
+    padding-top: 2px;
+}
+
+.special__comments {
+    padding-top: 2px;
+}
+
+.special__genre {
+    padding-top: 2px;
+}
+
+.special__user {
+    padding-top: 2px;
+    padding-bottom: 3px;
+}

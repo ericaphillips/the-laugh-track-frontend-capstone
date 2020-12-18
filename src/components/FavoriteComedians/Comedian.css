@@ -1,0 +1,16 @@
+.comedian {
+    padding-top: 1em;
+}
+
+.comedian__comments {
+    padding-top: 2px;
+    padding-bottom: 3px;
+}
+
+.comedian__toWatch {
+    padding-top: 2px;
+}
+
+.comedian__podcast {
+    padding-top: 2px;
+}
