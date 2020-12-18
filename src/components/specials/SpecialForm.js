@@ -21,6 +21,9 @@ export const SpecialForm = (props) => {
     const specialPlatformId = parseInt(special.specialPlatformId)
     const specialGenreId = parseInt(special.specialGenreId)
 
+    let cleanStatus = false
+    
+
 
         const ratingDropdowns = () => {
             const optionDropdownArray = [] 
@@ -59,20 +62,6 @@ export const SpecialForm = (props) => {
        }
    }
 
-
-    /* Creates references that can be attached to the input fields
-    in the form. Allows you to get the value of the input fields 
-    when user clicks the save button
-    */
-//    const name = useRef(null)
-//    const comicName = useRef(null)
-//    const rating = useRef(null)
-//    const specialLength = useRef(null)
-//    const specialPlatform = useRef(null)
-//    const cost = useRef(null)
-//    const clean = useRef(null)
-//    const comments = useRef(null)
-//    const specialGenre = useRef(null)
    
    //get Special dropdown states on initialization
    useEffect(() => {
@@ -87,6 +76,7 @@ export const SpecialForm = (props) => {
        getSpecialToEdit()
    }, [specials])
 
+
    const addNewSpecial = () => {
        
         console.log("special Genre:", specialGenreId)
@@ -100,6 +90,8 @@ export const SpecialForm = (props) => {
        if (specialGenreId === 0) {
         window.alert("Please select a genre for this special")
     }
+
+
        else {
            if (toEdit) {
             changeSpecial({
@@ -110,7 +102,7 @@ export const SpecialForm = (props) => {
                 specialLengthId: specialLengthId,
                 specialPlatformId: specialPlatformId,
                 cost: special.cost,
-                clean: special.clean,
+                clean: cleanStatus.toString(),
                 comments: special.comments,
                 specialGenreId: specialGenreId,
                 userId: parseInt(localStorage.getItem("app_user_id"))
@@ -121,11 +113,11 @@ export const SpecialForm = (props) => {
            addSpecial({
                 name: special.name,
                 comicName: special.comicName,
-                rating: special.rating,
+                rating: parseInt(special.rating),
                 specialLengthId: specialLengthId,
                 specialPlatformId: specialPlatformId,
                 cost: special.cost,
-                clean: special.clean,
+                clean: cleanStatus.toString(),
                 comments: special.comments,
                 specialGenreId: specialGenreId,
                 userId: parseInt(localStorage.getItem("app_user_id"))
@@ -134,6 +126,10 @@ export const SpecialForm = (props) => {
        }
    }
 }
+   const clean = (event) => {
+    return cleanStatus = event.target.checked
+    }
+
 
    return (
        <form className="specialForm">
@@ -225,12 +221,14 @@ export const SpecialForm = (props) => {
            </fieldset>
            <fieldset>
                <div className="form-section">
-                   <label htmlFor="rating">Is the special clean? </label>
-                   <select name="clean" className="form-control"
-                   value={special.clean}
-                   onChange={handleSpecialEdit}>
-                    <option value="0">Clean?</option>
-                    </select>
+                   <label htmlFor="clean">Is the special clean? </label>
+                    <input
+                    name="clean"
+                    type="checkbox" 
+                    onChange={event => {
+                        clean(event)
+                    }}
+                    />
                </div>
             </fieldset>
             <fieldset>

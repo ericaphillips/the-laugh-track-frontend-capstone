@@ -3,9 +3,9 @@
     {
       "email": "stella@stella.com",
       "password": "stella",
-      "name": "stella dog",
-      "profPic": "",
-      "description": "",
+      "name": "Sella dog",
+      "profPic": "Screen Shot 2020-12-16 at 10.39.52 AM.png",
+      "description": "I love comedy so much!!! Laughing is great!!",
       "id": 4
     },
     {
@@ -19,65 +19,6 @@
   ],
   "specials": [
     {
-      "id": 1,
-      "name": "X",
-      "comicName": "Daniel Sloss",
-      "rating": 10,
-      "specialLengthId": 4,
-      "specialPlatformId": 6,
-      "cost": "Netflix Subscription",
-      "clean": false,
-      "comments": "This is the greatest comedy special I have ever seen. For real",
-      "specialGenreId": 7,
-      "userId": 4
-    },
-    {
-      "id": 3,
-      "name": "Jigsaw",
-      "comicName": "Daniel Sloss",
-      "rating": "0",
-      "specialLengthId": 4,
-      "specialPlatformId": 6,
-      "cost": "Netflix Subscription",
-      "clean": "0",
-      "comments": "the best ever I love it so much",
-      "specialGenreId": 7,
-      "userId": 4
-    },
-    {
-      "id": 4,
-      "name": "Dark",
-      "comicName": "Daniel Sloss",
-      "specialLengthId": null,
-      "specialPlatformId": null,
-      "cost": "Netflix Subscription",
-      "comments": "It's really good",
-      "specialGenreId": null,
-      "userId": 4
-    },
-    {
-      "id": 5,
-      "name": "Incorrigible",
-      "comicName": "Chris D'elia",
-      "specialLengthId": 3,
-      "specialPlatformId": null,
-      "cost": "Netflix Subscription",
-      "comments": "I love this special I'm sad he was cancelled",
-      "specialGenreId": null,
-      "userId": 4
-    },
-    {
-      "name": "Quarter Life Crisis",
-      "comicName": "Taylor Tomlinson",
-      "specialLengthId": null,
-      "specialPlatformId": null,
-      "cost": "Netflix Subscription",
-      "comments": "She's great",
-      "specialGenreId": null,
-      "userId": 4,
-      "id": 6
-    },
-    {
       "name": "Man On Fire",
       "comicName": "Chris D'elia",
       "rating": "7",
@@ -88,35 +29,22 @@
       "specialGenreId": 16,
       "userId": 5,
       "id": 7
+    },
+    {
+      "id": 10,
+      "name": "carl",
+      "comicName": "test",
+      "rating": 10,
+      "specialLengthId": 6,
+      "specialPlatformId": 3,
+      "cost": "Netflix Subscription",
+      "clean": "true",
+      "comments": "ewfewfwe",
+      "specialGenreId": 12,
+      "userId": 4
     }
   ],
   "comedians": [
-    {
-      "id": 1,
-      "name": "Daniel Sloss",
-      "watched": "Dark, Jigsaw, X, everything on Youtube",
-      "toWatch": "Honestly nothing it's kinda sad",
-      "podcast": true,
-      "comments": "He's the best comedian out there right now love him. ",
-      "userId": 4
-    },
-    {
-      "id": 2,
-      "name": "Chris D'elia",
-      "watched": "Incorrigible, Man On Fire, No Pain for specials. TV and movies: Whitney, Alone Together, and You",
-      "toWatch": "Undateable",
-      "podcast": true,
-      "comments": "He's so funny he makes me cry with laughter every time",
-      "userId": 4
-    },
-    {
-      "id": 3,
-      "name": "Taylor Tomlinson",
-      "watched": "Quarter Life Crisis, Comedians of the World, everything on YouTube",
-      "toWatch": "I haven't watched all of her podcast episodes",
-      "comments": "She's so funny! She's so young and talented and has such a bright future. It's been really cool to watch her following grow over the past year.",
-      "userId": 4
-    },
     {
       "name": "Adrienne Iapalucci",
       "watched": "Degenerates special",
@@ -124,6 +52,33 @@
       "comments": "She's so funny, her Ted Bundy is a hero bit had me dying!",
       "userId": 5,
       "id": 4
+    },
+    {
+      "id": 5,
+      "name": "Daniel Sloss",
+      "watched": "X, Jigsaw, Dark, Hubris, everything on YouTube",
+      "toWatch": "Nothing I've consumed all content possible",
+      "podcast": "true",
+      "comments": "He's the best comedian out there right now love him. ",
+      "userId": 4
+    },
+    {
+      "name": "Ryan O'Flanagan",
+      "watched": "Overly Excited Tourist on YouTube, saw him at Zanies and on Parahoy",
+      "toWatch": "Anything I can he is amazing",
+      "podcast": "false",
+      "comments": "YOU GOTTA BE JOKING MY ASS",
+      "userId": 4,
+      "id": 6
+    },
+    {
+      "name": "Taylor Tomlinson",
+      "watched": "Quarter Life Crisis, Comedians of the World, everything on YouTube",
+      "toWatch": "I haven't watched all of her podcast episodes",
+      "podcast": "false",
+      "comments": "She's so funny! She's so young and talented and has such a bright future. It's been really cool to watch her following grow over the past year",
+      "userId": 4,
+      "id": 7
     }
   ],
   "specialLengths": [

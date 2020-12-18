@@ -67,7 +67,8 @@ export const SpecialDetails = (props) => {
             <div className="special__comments">{user.name}'s Comments: {special.comments}</div>
             <div className="special__genre">Genre: {specialGenre.genre}</div>
             <div className="special__user">Input by: {user.name}</div>
-            
+
+        {/*Buttons only show if the currently logged in user entered the special*/}  
         {currentUser === parseInt(special.userId)  && 
             <button onClick={() => {
                 props.history.push(`/specials/edit/${special.id}`)

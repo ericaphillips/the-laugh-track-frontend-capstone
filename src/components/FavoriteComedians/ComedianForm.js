@@ -1,3 +1,6 @@
+/*Creates a Form to input information about a comedian, either for
+adding a new one of updating an existing one
+*/
 import React, {useContext, useEffect, useState } from "react"   
 import { ComedianContext } from "./ComedianProvider"
 import "./Comedian.css"
@@ -6,6 +9,10 @@ export const ComedianForm = (props) => {
     //context provider for data
     const { addComedian, changeComedian, getComedians, comedians } = useContext(ComedianContext)
 
+    //sets inital value of podcast status to false
+    let podcastStatus = false
+    
+
     //component state
     const [comedian, setComedian] = useState({})
 
@@ -13,10 +20,10 @@ export const ComedianForm = (props) => {
     //to differentiate between editing and adding new
     const toEdit = props.match.params.hasOwnProperty("comedianId")
 
+    /* When changing a state object or array, create a
+    new one and change state instead of modifying current
+    */
     const handleComedianEdit = (event) => {
-        /* When changing a state object or array, create a
-        new one and change state instead of modifying current
-        */
        const newComedian = Object.assign({}, comedian)
        newComedian[event.target.name] = event.target.value
        setComedian(newComedian)
@@ -41,12 +48,13 @@ export const ComedianForm = (props) => {
        getComedians()
    }, [])
 
+   
    //Once the provider is updated, see if comedian is to be edited
-
    useEffect (() => {
        getComedianToEdit()
    }, [comedians])
 
+   //differentiates use of change or add comedian based on if toEdit is true
    const addNewComedian = () => {
        if (toEdit) {
            changeComedian({
@@ -54,7 +62,7 @@ export const ComedianForm = (props) => {
                name: comedian.name,
                watched: comedian.watched,
                toWatch: comedian.toWatch,
-               podcast: comedian.podcast,
+               podcast: podcastStatus.toString(),
                comments: comedian.comments,
                userId: parseInt(localStorage.getItem("app_user_id"))
            })
@@ -65,14 +73,19 @@ export const ComedianForm = (props) => {
             name: comedian.name,
             watched: comedian.watched,
             toWatch: comedian.toWatch,
-            podcast: comedian.podcast,
+            podcast: podcastStatus.toString(),
             comments: comedian.comments,
             userId: parseInt(localStorage.getItem("app_user_id"))
            })
            .then(() => props.history.push("/comedians"))
        }
    }
-
+   
+   //podcast status is supposed to change to true if the checkbox is clicked
+   const podcast= (event) => {
+    return podcastStatus = event.target.checked
+}
+    //form renders differently depending on if it is edit or add
    return (
        <form className="comedianForm">
            <h2 className="comedianForm__title">{toEdit ? "Edit Comedian's Details" : "Add Comedian"}</h2>
@@ -108,12 +121,14 @@ export const ComedianForm = (props) => {
             </fieldset>
             <fieldset>
                 <div className="form-section">
-                    <label htmlFor="podcast">Do they have a podcast? </label>
-                    <select name="podcast" className="form-control"
-                    value={comedian.podcast}
-                    onChange={handleComedianEdit}>
-                        <option value="0">Podcast?</option>
-                    </select>
+                    <label htmlFor="podcast">Do they have a podcast? Check if yes: </label>
+                    <input
+                    name="podcast"
+                    type="checkbox" 
+                    onChange={event => {
+                        podcast(event)
+                    }}
+                    />
                 </div>
             </fieldset>
             <fieldset>

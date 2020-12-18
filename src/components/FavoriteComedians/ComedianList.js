@@ -1,14 +1,16 @@
+//List of comedians. Renders on /comedians and on a user's page, but only the comedian's they've entered
 import React, { useContext, useEffect } from "react"
 import { ComedianContext } from "./ComedianProvider"
 import { Comedian } from "./Comedian"
 import "./Comedian.css"
 import { UserContext } from "../users/UserProvider"
 
-//add props as a parameter because you're passing
-//a property object to the comedian
+/*
+add props as a parameter because you're passing
+a property object to the comedian
+*/
 
 export const ComedianList = (props) => {
-    //this state changes when getComedians is invoked
     const { comedians, getComedians, deleteComedian } = useContext(ComedianContext)
     const { users, getUsers } = useContext(UserContext)
 
@@ -37,6 +39,12 @@ export const ComedianList = (props) => {
                         return (
                             <>
                         <Comedian key={comedian.id} comedian={comedian} user={user} />
+                        
+                        <button onClick={() => {
+                        props.history.push(`/comedians/${comedian.id}`)
+                        }}>View Comedian's Details</button>
+                        
+                        {/*Button only shows if the currently logged in user entered the comedian*/}
                         {currentUser === parseInt(comedian.userId)  && 
                         <button className="btn--release"
                         onClick={
