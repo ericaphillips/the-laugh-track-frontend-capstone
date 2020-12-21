@@ -15,15 +15,12 @@ export const SpecialForm = (props) => {
 
     //component state
     const [special, setSpecial] = useState({})
+    const [cleanStatus, setCleanStatus] = useState(false)
 
 
     const specialLengthId = parseInt(special.specialLengthId)
     const specialPlatformId = parseInt(special.specialPlatformId)
     const specialGenreId = parseInt(special.specialGenreId)
-
-    let cleanStatus = false
-    
-
 
         const ratingDropdowns = () => {
             const optionDropdownArray = [] 
@@ -127,7 +124,9 @@ export const SpecialForm = (props) => {
    }
 }
    const clean = (event) => {
-    return cleanStatus = event.target.checked
+
+    setCleanStatus(event.target.checked)
+    
     }
 
 

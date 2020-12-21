@@ -43,6 +43,45 @@
       "specialGenreId": 7,
       "userId": 4,
       "id": 8
+    },
+    {
+      "name": "Jigsaw",
+      "comicName": "Daniel Sloss",
+      "rating": 10,
+      "specialLengthId": 4,
+      "specialPlatformId": 6,
+      "cost": "Netflix Subscription",
+      "clean": "false",
+      "comments": "I recommend this for everyone, but especially my friends with relationship issues of any kind! Saving the world!",
+      "specialGenreId": 7,
+      "userId": 4,
+      "id": 9
+    },
+    {
+      "id": 10,
+      "name": "Mother Inferior",
+      "comicName": "Christina P",
+      "rating": "1",
+      "specialLengthId": 4,
+      "specialPlatformId": 6,
+      "cost": "Netflix Subscription",
+      "clean": "true",
+      "comments": "I hated this so much and it inspired me to make this app so I'd never accidentally watch it again",
+      "specialGenreId": 14,
+      "userId": 4
+    },
+    {
+      "id": 11,
+      "name": "The Tennessee Kid",
+      "comicName": "Nate Bargatze",
+      "rating": 8,
+      "specialLengthId": 4,
+      "specialPlatformId": 6,
+      "cost": "Netflix Subscription",
+      "clean": "true",
+      "comments": "He's so funny!!!",
+      "specialGenreId": 14,
+      "userId": 4
     }
   ],
   "comedians": [
@@ -81,6 +120,33 @@
       "podcast": "true",
       "comments": "She's so funny! She's so young and talented and has such a bright future. It's been really cool to watch her following grow over the past year",
       "userId": 4
+    },
+    {
+      "name": "Dave Chapelle",
+      "watched": "Sticks & Stones, 8:46",
+      "toWatch": "Everything else!",
+      "podcast": "false",
+      "comments": "The king of comedy",
+      "userId": 4,
+      "id": 9
+    },
+    {
+      "id": 10,
+      "name": "Whitney Cummings",
+      "watched": "Can I Touch It, I'm your Girlfriend, Whitney",
+      "toWatch": "Money Shot, I Love You, The Female Brain",
+      "podcast": "true",
+      "comments": "I don't love her comedy but I love her sitcom writing and her podcast!",
+      "userId": 4
+    },
+    {
+      "name": "Adrienne Iapalucci",
+      "watched": "Degenerates special, saw her on the Impractical Jokers cruise",
+      "toWatch": "I can't wait to listen to her album that comes out in a few weeks!",
+      "podcast": "false",
+      "comments": "She's so funny and I hope to one day be as funny and dark as her",
+      "userId": 4,
+      "id": 11
     }
   ],
   "specialLengths": [

@@ -28,7 +28,7 @@ export const ApplicationViews = (props) => {
         <SpecialProvider>
             <Route exact path="/specials" render={
                 props => <>
-                <SpecialSearch />
+                <SpecialSearch {...props}/>
                 <SpecialList {...props} />
                 </>
             } />

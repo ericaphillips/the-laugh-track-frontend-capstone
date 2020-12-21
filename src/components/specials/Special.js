@@ -9,7 +9,7 @@ export const Special = ({ special, user }) => (
                 { special.name }
         </h4>
         <div className="special__comic">Comedian: {special.comicName}</div>
-        <div className="special__user">Entered by: <Link to={`/users/$user.id}`}>{user.name}</Link></div>
+        <div className="special__user">Entered by: <Link to={`/users/${user.id}`}>{user.name}</Link></div>
         <div className="special__rating">{user.name}'s rating: {special.rating}</div>
     </section>
 )

@@ -9,12 +9,10 @@ export const ComedianForm = (props) => {
     //context provider for data
     const { addComedian, changeComedian, getComedians, comedians } = useContext(ComedianContext)
 
-    //sets inital value of podcast status to false
-    let podcastStatus = false
-    
-
     //component state
     const [comedian, setComedian] = useState({})
+    //sets inital state of podcast status to false
+    const [podcastStatus, setPodcastStatus] = useState(false)
 
     //checks for URL parameter to see it comedian exists
     //to differentiate between editing and adding new
@@ -83,7 +81,7 @@ export const ComedianForm = (props) => {
    
    //podcast status is supposed to change to true if the checkbox is clicked
    const podcast= (event) => {
-    return podcastStatus = event.target.checked
+    setPodcastStatus(event.target.checked)
 }
     //form renders differently depending on if it is edit or add
    return (
@@ -99,7 +97,7 @@ export const ComedianForm = (props) => {
                     />
                 </div>
             </fieldset>
-            <fieldset>
+            <fieldset>          
                 <div className="form-section">
                     <label htmlFor="name">Things you've watched by this comedian: </label>
                     <input type="text" name="watched" required autoFocus className="form-control"
