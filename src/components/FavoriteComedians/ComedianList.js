@@ -51,8 +51,8 @@ export const ComedianList = (props) => {
                     filteredComedians.map(comedian => {
                         const user= users.find(user => user.id === comedian.userId)
                         return (
-                            <>
-                        <Comedian key={comedian.id} comedian={comedian} user={user} />
+                            <section className="comedianListTwo" key={comedian.id}>
+                        <Comedian comedian={comedian} user={user} />
                         
                         <button onClick={() => {
                         props.history.push(`/comedians/${comedian.id}`)
@@ -72,7 +72,7 @@ export const ComedianList = (props) => {
                         Delete Comedian
                         </button>
                     }
-            </>
+            </section>
                     )})
                 }
             </article>

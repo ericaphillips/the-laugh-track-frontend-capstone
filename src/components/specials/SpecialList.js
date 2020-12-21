@@ -47,8 +47,8 @@ export const SpecialList = (props) => {
                filteredSpecials.map(special => {
                const user= users.find(user => user.id === special.userId)
                return (
-               <>
-               <Special key={special.id} special={special} user={user} />
+               <section className="specialListTwo" key={special.id}>
+               <Special special={special} user={user} />
                 
                 <button onClick={() => {
                 props.history.push(`/specials/${special.id}`)
@@ -68,7 +68,7 @@ export const SpecialList = (props) => {
             Delete Special
             </button>
                }
-               </>
+               </section>
                )})
             }
            </article>

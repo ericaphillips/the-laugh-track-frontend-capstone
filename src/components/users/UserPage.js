@@ -35,12 +35,12 @@ export const UserPage = (props) => {
     useEffect (() => {
         const user = users.find(user => user.id === parseInt(props.match.params.userId)) || {}
         setUser(user)
-    }, [users])
+    }, [users, props.match.params.userId])
 
     useEffect (() => {
         const userSpecials = specials.filter(specials => specials.userId === parseInt(props.match.params.userId)) || {}
         setUserSpecials(userSpecials)
-    }, [specials])  
+    }, [specials, props.match.params.userId])  
 
 //     useEffect (() => {
 //         if (searchTerms !== "") {
@@ -56,7 +56,7 @@ export const UserPage = (props) => {
     useEffect (() => {
         const userComedians = comedians.filter(comedians => comedians.userId === parseInt(props.match.params.userId)) || {}
         setUserComedians(userComedians)
-    }, [comedians])
+    }, [comedians, props.match.params.userId])
 
     return (
         <>
@@ -75,7 +75,7 @@ export const UserPage = (props) => {
         </section>
         <section className="users__specials">
         <h1>{user.name}'s Watched Specials</h1>
-        <SpecialsDropdown />
+        <SpecialsDropdown key={1}/>
         {/* <form className="specialDropdown">
             <div className="specialDropdown__header">Sort by:</div>
             <fieldset>
@@ -98,8 +98,8 @@ export const UserPage = (props) => {
             {
                 userSpecials.map(special => {
                     return (
-                    <>
-                    <Special key={special.id} special={special} user={user} />
+                    <section className="userSpecialList" key={special.id}>
+                    <Special special={special} user={user} />
                     <button onClick={() => {
                         props.history.push(`/specials/${special.id}`)
                         }}>View Special's Details</button>
@@ -116,7 +116,7 @@ export const UserPage = (props) => {
             Delete Special
             </button>
                }
-                    </>
+                    </section>
                     )
                    
                 })
@@ -134,8 +134,8 @@ export const UserPage = (props) => {
                 {
                     userComedians.map(comedian => {
                         return (
-                        <>
-                        <Comedian key={comedian.id} comedian={comedian} user={user} />
+                        <section className="userComedianList" key={comedian.id}>
+                        <Comedian comedian={comedian} user={user} />
                         <button onClick={() => {
                         props.history.push(`/comedians/${comedian.id}`)
                         }}>View Comedian's Details</button>
@@ -152,7 +152,7 @@ export const UserPage = (props) => {
                         Delete Comedian
                         </button>
                     }
-                        </>
+                        </section>
                         )
                     })
                 }
