@@ -12,6 +12,8 @@ export const SpecialList = (props) => {
     const { specials, getSpecials, deleteSpecial, searchTerms } = useContext(SpecialContext)
     const { users, getUsers } = useContext(UserContext)
 
+    const specialsToSearch = [...specials]
+
     const currentUser = parseInt(localStorage.getItem("app_user_id"))
 
     //Since no longer displaying all specials
@@ -28,7 +30,7 @@ export const SpecialList = (props) => {
    useEffect (() => {
        if (searchTerms !== "") {
        //if search field isn't blank, show searched specials
-       const filtered = specials.filter(special => special.name.toLowerCase().includes(searchTerms))
+       const filtered = specialsToSearch.filter(special => special.name.toLowerCase().includes(searchTerms))
        setFiltered(filtered)
    } else {
        //if search field is empty

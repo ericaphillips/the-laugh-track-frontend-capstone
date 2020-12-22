@@ -6,15 +6,16 @@ import { Special } from "../specials/Special"
 import { Comedian } from "../FavoriteComedians/Comedian"
 import { UserInfo } from "./UserInfo"
 import { SpecialsDropdown } from "../SortingDropdowns/SpecialSort"
+import { ComediansDropdown } from "../SortingDropdowns/ComedianSort"
 import "./User.css"
 // import "../FavoriteComedians/Comedian.css"
 // import "../specials/Special.css"
 
 
 export const UserPage = (props) => {
-    const { specials, getSpecials, deleteSpecial, searchTerms, sortSpecialsNumAsc, sortSpecialsNumDesc } = useContext(SpecialContext)
-    const { comedians, getComedians, deleteComedian, changeComedian } = useContext(ComedianContext)
-    const { users, getUsers, usersRatingAsc, setUsersRatingAsc } = useContext(UserContext)
+    const { specials, getSpecials, deleteSpecial} = useContext(SpecialContext)
+    const { comedians, getComedians, deleteComedian} = useContext(ComedianContext)
+    const { users, getUsers} = useContext(UserContext)
 
     const [ user, setUser ] = useState([])
     const [ userSpecials, setUserSpecials ] = useState([])
@@ -76,24 +77,7 @@ export const UserPage = (props) => {
         <section className="users__specials">
         <h1>{user.name}'s Watched Specials</h1>
         <SpecialsDropdown />
-        {/* <form className="specialDropdown">
-            <div className="specialDropdown__header">Sort by:</div>
-            <fieldset>
-                <div className="specialDropdown__options">
-                <select name="sort__special" className="form-control">
-                    <option value="0">Sort By:</option>
-                    <option value="Rating Ascending" onSelect={event => {
-                        event.preventDefault()
-                        SortSpecialsByNumAsc()}}>Rating Ascending</option>
-                    <option value="Rating Descending">Rating Descending</option>
-                    </select>
-                        <button type="submit" 
-                        onClick={event => {
-                        event.preventDefault()
-                        SortSpecialsByNumAsc()}}>Sort</button>
-                </div>
-            </fieldset>
-        </form> */}
+
         <div className="user__Specials">
             {
                 userSpecials.map(special => {
@@ -130,6 +114,7 @@ export const UserPage = (props) => {
         </section>
         <section className="users__comedians">
             <h1>{user.name}'s Favorite Comedians</h1>
+            <ComediansDropdown />
             <div className="users__comedians">
                 {
                     userComedians.map(comedian => {

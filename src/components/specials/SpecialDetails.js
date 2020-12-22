@@ -4,7 +4,7 @@ import { SpecialGenreContext } from "../SpecialDropdowns/SpecialGenreProvider"
 import { SpecialLengthContext } from "../SpecialDropdowns/SpecialLengthProvider"
 import { SpecialPlatformContext } from "../SpecialDropdowns/SpecialPlatformProvider"
 import { UserContext } from "../users/UserProvider"
-import userEvent from "@testing-library/user-event"
+
 
 export const SpecialDetails = (props) => {
     const { specials, getSpecials, deleteSpecial } = useContext(SpecialContext)

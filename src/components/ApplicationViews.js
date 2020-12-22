@@ -15,6 +15,7 @@ import { ComedianList } from "./FavoriteComedians/ComedianList"
 import { ComedianForm } from "./FavoriteComedians/ComedianForm"
 import { ComedianDetails } from "./FavoriteComedians/ComedianDetails"
 import { ComedianSearch } from "./FavoriteComedians/ComedianSearch"
+import { ComediansDropdown } from "./SortingDropdowns/ComedianSort"
 import { UserPage } from "./users/UserPage"
 import { UserForm } from "./users/UserInfoForm"
 
@@ -57,6 +58,7 @@ export const ApplicationViews = (props) => {
             <Route exact path="/comedians" render={
                 props => <>
                 <ComedianSearch />
+                <ComediansDropdown {...props}/>
                 <ComedianList {...props} />
                 </>
             } />
@@ -75,6 +77,8 @@ export const ApplicationViews = (props) => {
     
     <ComedianProvider>
     <SpecialProvider>
+    <SpecialPlatformProvider>
+    <SpecialLengthProvider>
         <UserProvider>
         <Route path="/users/:userId(\d+)" render={
                 props =>
@@ -84,6 +88,8 @@ export const ApplicationViews = (props) => {
                 props => <UserForm {...props} />
             } />
         </UserProvider>
+    </SpecialLengthProvider>
+    </SpecialPlatformProvider>
     </SpecialProvider>
     </ComedianProvider>
         </>

@@ -71,9 +71,6 @@ export const SpecialsDropdown = (props) => {
                 <div className="specialDropdown__options">
                 <select name="sort__special" className="form-control" id="sort--special" onChange={handleSort}>
                     <option value="0">Sort By</option>
-                    {/* <option value="Rating Ascending" onSelect={event => {
-                        event.preventDefault()
-                        SortSpecialsByNumAsc()}}>Rating Ascending</option> */}
                     <option value="special--ratingascending">Rating Low-High</option>
                     <option value="special--ratingdescending">Rating High-Low</option>
                     <option value="special--name">Special's Name A-Z</option>
@@ -82,10 +79,6 @@ export const SpecialsDropdown = (props) => {
                     <option value="special--platform">Special's Streaming Platform</option>
                     <option value="special--entered">Date Entered</option>
                     </select>
-                        {/* <button type="submit" 
-                        onClick={event => {
-                        event.preventDefault()
-                        SortSpecialsByNumAsc()}}>Sort</button> */}
                 </div>
             </fieldset>
         </form>

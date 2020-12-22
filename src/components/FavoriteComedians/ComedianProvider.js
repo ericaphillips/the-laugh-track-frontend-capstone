@@ -61,7 +61,7 @@ export const ComedianProvider = (props) => {
 
     return (
         <ComedianContext.Provider value={{
-            comedians, getComedians, addComedian, changeComedian, deleteComedian, sortComedianNameAsc, sortComedianChronoAsc, searchTerms, setSearch
+            comedians, getComedians, setComedians, addComedian, changeComedian, deleteComedian, sortComedianNameAsc, sortComedianChronoAsc, searchTerms, setSearch
         }}>
             {props.children}
         </ComedianContext.Provider>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useRef } from "react"
+import React, { useContext, useEffect, useState} from "react"
 import { UserContext } from "./UserProvider"
 import { useForm } from "react-hook-form"
 
@@ -7,7 +7,6 @@ export const UserForm = (props) => {
     const { addProfPic, addDescription, users, getUsers } = useContext(UserContext)
 
     const [user, setUser] = useState({})
-    const currentUser = parseInt(localStorage.getItem("app_user_id"))
     
     useEffect(() => {
         getUsers()
