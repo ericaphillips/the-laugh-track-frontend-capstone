@@ -22,7 +22,7 @@
       "id": 7,
       "name": "Man On Fire",
       "comicName": "Chris D'elia",
-      "rating": "7",
+      "rating": 7,
       "specialLengthId": 4,
       "specialPlatformId": 6,
       "cost": "Netflix Subscription",
@@ -56,19 +56,6 @@
       "specialGenreId": 7,
       "userId": 4,
       "id": 9
-    },
-    {
-      "id": 10,
-      "name": "Mother Inferior",
-      "comicName": "Christina P",
-      "rating": "1",
-      "specialLengthId": 4,
-      "specialPlatformId": 6,
-      "cost": "Netflix Subscription",
-      "clean": "true",
-      "comments": "I hated this so much and it inspired me to make this app so I'd never accidentally watch it again",
-      "specialGenreId": 14,
-      "userId": 4
     },
     {
       "id": 11,

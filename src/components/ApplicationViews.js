@@ -8,6 +8,7 @@ import { SpecialPlatformProvider } from "./SpecialDropdowns/SpecialPlatformProvi
 import { SpecialGenreProvider } from "./SpecialDropdowns/SpecialGenreProvider"
 import { SpecialDetails } from "./specials/SpecialDetails"
 import { SpecialSearch } from "./specials/SpecialSearch"
+import { SpecialsDropdown } from "./SortingDropdowns/SpecialSort"
 import { UserProvider } from "./users/UserProvider"
 import { ComedianProvider } from "./FavoriteComedians/ComedianProvider"
 import { ComedianList } from "./FavoriteComedians/ComedianList"
@@ -29,6 +30,7 @@ export const ApplicationViews = (props) => {
             <Route exact path="/specials" render={
                 props => <>
                 <SpecialSearch {...props}/>
+                <SpecialsDropdown {...props}/>
                 <SpecialList {...props} />
                 </>
             } />

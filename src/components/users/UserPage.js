@@ -75,7 +75,7 @@ export const UserPage = (props) => {
         </section>
         <section className="users__specials">
         <h1>{user.name}'s Watched Specials</h1>
-        <SpecialsDropdown key={1}/>
+        <SpecialsDropdown />
         {/* <form className="specialDropdown">
             <div className="specialDropdown__header">Sort by:</div>
             <fieldset>

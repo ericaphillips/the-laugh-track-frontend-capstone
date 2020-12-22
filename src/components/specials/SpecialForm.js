@@ -95,7 +95,7 @@ export const SpecialForm = (props) => {
                 id: special.id,
                 name: special.name,
                 comicName: special.comicName,
-                rating: special.rating,
+                rating: parseInt(special.rating),
                 specialLengthId: specialLengthId,
                 specialPlatformId: specialPlatformId,
                 cost: special.cost,
