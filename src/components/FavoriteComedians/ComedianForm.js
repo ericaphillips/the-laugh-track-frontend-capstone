@@ -14,6 +14,9 @@ export const ComedianForm = (props) => {
     //sets inital state of podcast status to false
     const [podcastStatus, setPodcastStatus] = useState(false)
 
+    //defines current user, used for user-specific data
+    const currentUser = parseInt(localStorage.getItem("app_user_id"))
+
     //checks for URL parameter to see it comedian exists
     //to differentiate between editing and adding new
     const toEdit = props.match.params.hasOwnProperty("comedianId")
@@ -64,7 +67,7 @@ export const ComedianForm = (props) => {
                comments: comedian.comments,
                userId: parseInt(localStorage.getItem("app_user_id"))
            })
-           .then(() => props.history.push("/comedians"))
+           .then(() => props.history.push(`/users/${currentUser}`))
        }
        else{
            addComedian({
@@ -75,7 +78,7 @@ export const ComedianForm = (props) => {
             comments: comedian.comments,
             userId: parseInt(localStorage.getItem("app_user_id"))
            })
-           .then(() => props.history.push("/comedians"))
+           .then(() => props.history.push(`/users/${currentUser}`))
        }
    }
    

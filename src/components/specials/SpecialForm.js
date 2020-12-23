@@ -16,6 +16,8 @@ export const SpecialForm = (props) => {
     const { specialLengths, getSpecialLengths } = useContext(SpecialLengthContext)
     const { specialPlatforms, getSpecialPlatforms } = useContext(SpecialPlatformContext)
 
+    //defines current user, used for user-specific data
+    const currentUser = parseInt(localStorage.getItem("app_user_id"))
 
     //component state
     const [special, setSpecial] = useState({})
@@ -108,7 +110,7 @@ export const SpecialForm = (props) => {
                 specialGenreId: specialGenreId,
                 userId: parseInt(localStorage.getItem("app_user_id"))
             })
-            .then(() => props.history.push("/specials"))
+            .then(() => props.history.push(`/users/${currentUser}`))
         }
            else {
            addSpecial({
@@ -123,7 +125,7 @@ export const SpecialForm = (props) => {
                 specialGenreId: specialGenreId,
                 userId: parseInt(localStorage.getItem("app_user_id"))
            })
-           .then(() => props.history.push("/specials"))
+           .then(() => props.history.push(`/users/${currentUser}`))
        }
    }
 }

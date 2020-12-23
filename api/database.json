@@ -15,6 +15,14 @@
       "profPic": "",
       "description": "",
       "id": 5
+    },
+    {
+      "email": "new@new.com",
+      "password": "new",
+      "name": "new new",
+      "profPic": "",
+      "description": "",
+      "id": 6
     }
   ],
   "specials": [
@@ -32,6 +40,7 @@
       "userId": 5
     },
     {
+      "id": 8,
       "name": "X",
       "comicName": "Daniel Sloss",
       "rating": 10,
@@ -39,10 +48,9 @@
       "specialPlatformId": 4,
       "cost": "HBO Subscription",
       "clean": "false",
-      "comments": "This is the greatest comedy special! I think it should be required viewing for everyone.",
+      "comments": "This is the greatest comedy special! I think it should be required viewing for everyone. I've made so many people watch it!",
       "specialGenreId": 7,
-      "userId": 4,
-      "id": 8
+      "userId": 4
     },
     {
       "name": "Jigsaw",
@@ -96,7 +104,7 @@
       "watched": "Overly Excited Tourist on YouTube, saw him at Zanies and on Parahoy",
       "toWatch": "Anything I can he is amazing",
       "podcast": "false",
-      "comments": "he's the funniest and his OVerly Excited Tourist videos are the best",
+      "comments": "he's the funniest and his Overly Excited Tourist videos are the best",
       "userId": 4
     },
     {
@@ -134,6 +142,15 @@
       "comments": "She's so funny and I hope to one day be as funny and dark as her",
       "userId": 4,
       "id": 11
+    },
+    {
+      "name": "Tom Segura",
+      "watched": "Ball Hog",
+      "toWatch": "Mostly Stories, Disgraceful",
+      "podcast": "true",
+      "comments": "He's so funny! unexpectedly dark, his special that came out this year is amazing",
+      "userId": 4,
+      "id": 12
     }
   ],
   "specialLengths": [
