@@ -7,14 +7,18 @@ import { UserContext } from "../users/UserProvider"
 
 
 export const ComedianDetails = (props) => {
+    //gets what is needed from providers in order to render useful details about specials
     const { comedians, getComedians, deleteComedian } = useContext(ComedianContext)
     const { users, getUsers } = useContext(UserContext)
     
+    //set state
     const [comedian, setComedian] = useState({})
     const [user, setUser] = useState({})
 
+    //defines current user, used for user-specific data
     const currentUser = parseInt(localStorage.getItem("app_user_id"))
     
+    //gets comedians and users from database
     useEffect(() => {
         getComedians()
         .then(getUsers)

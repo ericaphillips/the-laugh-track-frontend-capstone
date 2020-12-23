@@ -1,3 +1,4 @@
+//List of specials. Renders on /specials and on a user's page, but only the specials they've entered
 import React, { useContext, useEffect, useState } from "react"
 import { SpecialContext } from "./SpecialProvider"
 import { Special } from "./Special"
@@ -8,12 +9,13 @@ import { UserContext } from "../users/UserProvider"
 object to the special
 */
 export const SpecialList = (props) => {
-    //this state changes when getSpecials is invoked
+    //context providers for data
     const { specials, getSpecials, deleteSpecial, searchTerms } = useContext(SpecialContext)
     const { users, getUsers } = useContext(UserContext)
 
-    const specialsToSearch = [...specials]
+    // const specialsToSearch = [...specials]
 
+    //defines current user, used for user-specific data
     const currentUser = parseInt(localStorage.getItem("app_user_id"))
 
     //Since no longer displaying all specials
@@ -30,7 +32,7 @@ export const SpecialList = (props) => {
    useEffect (() => {
        if (searchTerms !== "") {
        //if search field isn't blank, show searched specials
-       const filtered = specialsToSearch.filter(special => special.name.toLowerCase().includes(searchTerms))
+       const filtered = specials.filter(special => special.name.toLowerCase().includes(searchTerms))
        setFiltered(filtered)
    } else {
        //if search field is empty
@@ -38,6 +40,9 @@ export const SpecialList = (props) => {
    }
 }, [searchTerms, specials])
 
+/*returns a button to add a special, a filtered list of specials based on search,
+and if the current user is the user who entered the special, renders a button to delete the special
+*/
    return (
        <div className="specials">
            <h1>Specials</h1>

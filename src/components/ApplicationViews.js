@@ -65,10 +65,15 @@ export const ApplicationViews = (props) => {
             <Route exact path="/comedians/createNewComedian" render={
                 props => <ComedianForm {...props} />
             } />
-
+            {/* the route saves the number at the end of the URL 
+            as a variable named comedianId, which is then used in ComedianDetails
+            */}
             <Route path="/comedians/:comedianId(\d+)" render={
                 props => <ComedianDetails {...props} />
             } />
+            {/* the route saves the number at the end of the URL 
+            as a variable named comedianId, which is then used in ComedianForm for Edit
+            */}
             <Route path="/comedians/edit/:comedianId(\d+)" render={
                 props => <ComedianForm {...props} />
             } />
@@ -80,10 +85,16 @@ export const ApplicationViews = (props) => {
     <SpecialPlatformProvider>
     <SpecialLengthProvider>
         <UserProvider>
+            {/* the route saves the number at the end of the URL 
+            as a variable named userId, which is then used on a user's page
+            */}
         <Route path="/users/:userId(\d+)" render={
                 props =>
                  <UserPage {...props} />
             } />
+            {/* the route saves the number at the end of the URL 
+            as a variable named userId, which is then used on edit user page
+            */}
         <Route path="/users/edit/:userId(\d+)" render={
                 props => <UserForm {...props} />
             } />

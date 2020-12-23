@@ -1,9 +1,11 @@
+//used on Comedian List and user's pages to sort lists of comedians
 import React, { useContext } from "react"
 import { ComedianContext } from "../FavoriteComedians/ComedianProvider"
 
 export const ComediansDropdown = (props) => {
     const { comedians, setComedians } = useContext(ComedianContext)
 
+    //sorts list differently based on target value of what option was selected from dropdown
     const handleSort = (event) => {
         const comediansToSort = [...comedians]
 
@@ -46,6 +48,7 @@ export const ComediansDropdown = (props) => {
 
     }
 
+    //dropdown used with values to sort by
     return (
         <>
         

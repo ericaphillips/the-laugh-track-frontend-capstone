@@ -6,17 +6,21 @@ import { SpecialLengthContext } from "../SpecialDropdowns/SpecialLengthProvider"
 import { SpecialPlatformContext } from "../SpecialDropdowns/SpecialPlatformProvider"
 
 export const Special = ({ special, user }) => {
+    //useContext to get special lengths and platforms from their providers
     const { specialLengths, getSpecialLengths } = useContext(SpecialLengthContext)
     const { specialPlatforms, getSpecialPlatforms } = useContext(SpecialPlatformContext)
 
+    //set states of each
     const [specialLength, setSpecialLength] = useState({})
     const [specialPlatform, setSpecialPlatform] = useState({})
 
+    //get special lengths and platforms from fetch call
     useEffect(() => {
         getSpecialLengths()
         .then(getSpecialPlatforms)
     }, [])
 
+    //finds specific special lengths and platforms for each special based on ids
     useEffect (() => {
         const length = specialLengths.find(length => length.id === special.specialLengthId) || {}
         setSpecialLength(length)

@@ -1,11 +1,11 @@
+//Thhis is used on Special List and user page to sort the list of specials
 import React, { useContext } from "react"
-import { UserContext } from "../users/UserProvider"
 import { SpecialContext } from "../specials/SpecialProvider"
 
 export const SpecialsDropdown = (props) => {
-    // const { setUsersRatingAsc } = useContext(UserContext)
     const { specials, setSpecials } = useContext(SpecialContext)
 
+    //sorts list differently based on target value of what option was selected from dropdown
     const handleSort = (event) => {
         const specialsToSort = [...specials]
         if (event.target.value === "special--ratingascending") {
@@ -62,6 +62,7 @@ export const SpecialsDropdown = (props) => {
             }
     }
     
+    //dropdown used with values to sort by
     return (
         <>
         
