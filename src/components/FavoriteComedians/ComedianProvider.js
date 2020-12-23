@@ -47,21 +47,9 @@ export const ComedianProvider = (props) => {
         .then(getComedians)
     }
 
-    const sortComedianNameAsc= () => {
-        return fetch("http://localhost:8088/comedians/name?_sort=views&_order=asc")
-        .then(response => response.json())
-        .then(setComedians)
-    }
-
-    const sortComedianChronoAsc= () => {
-        return fetch("http://localhost:8088/comedians/id?_sort=views&_order=asc")
-        .then(response => response.json())
-        .then(setComedians)
-    }
-
     return (
         <ComedianContext.Provider value={{
-            comedians, getComedians, addComedian, changeComedian, deleteComedian, sortComedianNameAsc, sortComedianChronoAsc, searchTerms, setSearch
+            comedians, getComedians, setComedians, addComedian, changeComedian, deleteComedian, searchTerms, setSearch
         }}>
             {props.children}
         </ComedianContext.Provider>

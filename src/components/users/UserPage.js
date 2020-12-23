@@ -1,3 +1,4 @@
+//User's page displaying their user info, favorite comedians, and specials they've watched
 import React, { useContext, useEffect, useState } from "react"
 import { SpecialContext } from "../specials/SpecialProvider"
 import { ComedianContext } from "../FavoriteComedians/ComedianProvider"
@@ -6,37 +7,43 @@ import { Special } from "../specials/Special"
 import { Comedian } from "../FavoriteComedians/Comedian"
 import { UserInfo } from "./UserInfo"
 import { SpecialsDropdown } from "../SortingDropdowns/SpecialSort"
+import { ComediansDropdown } from "../SortingDropdowns/ComedianSort"
 import "./User.css"
-// import "../FavoriteComedians/Comedian.css"
-// import "../specials/Special.css"
 
-
+/* add props as a parameter because you're passing property 
+objects
+*/
 export const UserPage = (props) => {
-    const { specials, getSpecials, deleteSpecial, searchTerms, sortSpecialsNumAsc, sortSpecialsNumDesc } = useContext(SpecialContext)
-    const { comedians, getComedians, deleteComedian, changeComedian } = useContext(ComedianContext)
-    const { users, getUsers, usersRatingAsc, setUsersRatingAsc } = useContext(UserContext)
+    //context providers for data
+    const { specials, getSpecials, deleteSpecial} = useContext(SpecialContext)
+    const { comedians, getComedians, deleteComedian} = useContext(ComedianContext)
+    const { users, getUsers} = useContext(UserContext)
 
+    //sets state
     const [ user, setUser ] = useState([])
     const [ userSpecials, setUserSpecials ] = useState([])
     const [ userComedians, setUserComedians ] = useState([]) 
     
-    
-
+    //defines current user, used for user-specific data
     const currentUser = parseInt(localStorage.getItem("app_user_id"))
     // const [ filteredSpecials, setFiltered ] = useState([])
 
-
+    /* Component is mounted to the DOM, React renders
+    blank HTML first, gets data, then re-renders
+    */
     useEffect(() => {
         getUsers()
         .then(getComedians)
         .then(getSpecials)
     }, [])
 
+    //defines user for this page based on userId from Route
     useEffect (() => {
         const user = users.find(user => user.id === parseInt(props.match.params.userId)) || {}
         setUser(user)
     }, [users, props.match.params.userId])
 
+    //finds specials for the userId from Route
     useEffect (() => {
         const userSpecials = specials.filter(specials => specials.userId === parseInt(props.match.params.userId)) || {}
         setUserSpecials(userSpecials)
@@ -53,11 +60,17 @@ export const UserPage = (props) => {
 //     }
 //  }, [searchTerms, specials])
 
+    //finds comedians for the userId from the Route
     useEffect (() => {
         const userComedians = comedians.filter(comedians => comedians.userId === parseInt(props.match.params.userId)) || {}
         setUserComedians(userComedians)
     }, [comedians, props.match.params.userId])
 
+/*returns a button to edit user info if current user is the same as the userId for the page, 
+a filtered list of specials based on the user, a filtered list of comedians based on the user, 
+and if the current user is the user whose page it is, also renders add and delete buttons
+Always renders veiw details buttons regardless of who current user is
+*/
     return (
         <>
         {currentUser === parseInt(props.match.params.userId)  && 
@@ -75,25 +88,8 @@ export const UserPage = (props) => {
         </section>
         <section className="users__specials">
         <h1>{user.name}'s Watched Specials</h1>
-        <SpecialsDropdown key={1}/>
-        {/* <form className="specialDropdown">
-            <div className="specialDropdown__header">Sort by:</div>
-            <fieldset>
-                <div className="specialDropdown__options">
-                <select name="sort__special" className="form-control">
-                    <option value="0">Sort By:</option>
-                    <option value="Rating Ascending" onSelect={event => {
-                        event.preventDefault()
-                        SortSpecialsByNumAsc()}}>Rating Ascending</option>
-                    <option value="Rating Descending">Rating Descending</option>
-                    </select>
-                        <button type="submit" 
-                        onClick={event => {
-                        event.preventDefault()
-                        SortSpecialsByNumAsc()}}>Sort</button>
-                </div>
-            </fieldset>
-        </form> */}
+        <SpecialsDropdown />
+
         <div className="user__Specials">
             {
                 userSpecials.map(special => {
@@ -130,6 +126,7 @@ export const UserPage = (props) => {
         </section>
         <section className="users__comedians">
             <h1>{user.name}'s Favorite Comedians</h1>
+            <ComediansDropdown />
             <div className="users__comedians">
                 {
                     userComedians.map(comedian => {

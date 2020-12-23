@@ -1,26 +1,34 @@
+/* Details for one special. Special is routed from by clicking on their name 
+on a list of specials, either the general special list or on a user's page
+*/
+
 import React, { useState, useEffect, useContext } from "react"
 import { SpecialContext } from "./SpecialProvider"
 import { SpecialGenreContext } from "../SpecialDropdowns/SpecialGenreProvider"
 import { SpecialLengthContext } from "../SpecialDropdowns/SpecialLengthProvider"
 import { SpecialPlatformContext } from "../SpecialDropdowns/SpecialPlatformProvider"
 import { UserContext } from "../users/UserProvider"
-import userEvent from "@testing-library/user-event"
+
 
 export const SpecialDetails = (props) => {
+    //gets what is needed from providers in order to render useful details about specials
     const { specials, getSpecials, deleteSpecial } = useContext(SpecialContext)
     const { specialGenres, getSpecialGenres } = useContext(SpecialGenreContext)
     const { specialLengths, getSpecialLengths } = useContext(SpecialLengthContext)
     const { specialPlatforms, getSpecialPlatforms } = useContext(SpecialPlatformContext)
     const { users, getUsers } = useContext(UserContext)
 
+    //set initial state
     const [special, setSpecial] = useState({})
     const [specialGenre, setSpecialGenre] = useState({})
     const [specialLength, setSpecialLength] = useState({})
     const [specialPlatform, setSpecialPlatform] = useState({})
     const [user, setUser] = useState({})
 
+    //defines current user, used for user-specific data
     const currentUser = parseInt(localStorage.getItem("app_user_id"))
 
+    //gets specials, the related tables for specials, and users from database
     useEffect(() => {
         getSpecials()
         .then(getSpecialGenres)
@@ -29,26 +37,31 @@ export const SpecialDetails = (props) => {
         .then(getUsers)
     }, [])
 
+    //finds genre associated with each special
     useEffect (() => {
         const genre = specialGenres.find(genre => genre.id === special.specialGenreId) || {}
         setSpecialGenre(genre)
     }, [specialGenres])
 
+    //finds length associated with each special
     useEffect (() => {
         const length = specialLengths.find(length => length.id === special.specialLengthId) || {}
         setSpecialLength(length)
     }, [specialLengths])
 
+    //finds platform associated with each special
     useEffect (() => {
         const platform = specialPlatforms.find(platform => platform.id === special.specialPlatformId) || {}
         setSpecialPlatform(platform)
     }, [specialPlatforms])
 
+    //finds user associated with each special
     useEffect (() => {
         const user = users.find(user => user.id === special.userId) || {}
         setUser(user)
     }, [users])
 
+    //finds special based on specialId created in Application Views Route
     useEffect (() => {
         const special = specials.find(special => special.id === parseInt(props.match.params.specialId)) || {}
         setSpecial(special)

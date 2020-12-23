@@ -4,7 +4,7 @@ import "./Special.css"
 
 export const SpecialSearch = (props) => {
     const { setSearch } = useContext(SpecialContext)
-
+    
     return (
         <>
         Special Search: 

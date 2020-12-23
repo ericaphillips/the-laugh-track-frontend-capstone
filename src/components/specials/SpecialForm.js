@@ -1,3 +1,7 @@
+/*Creates a Form to input information about a special, either for
+adding a new one of updating an existing one
+*/
+
 import React, { useContext, useEffect, useState } from "react"
 import { SpecialContext } from "./SpecialProvider"
 import { SpecialGenreContext } from "../SpecialDropdowns/SpecialGenreProvider"
@@ -12,16 +16,18 @@ export const SpecialForm = (props) => {
     const { specialLengths, getSpecialLengths } = useContext(SpecialLengthContext)
     const { specialPlatforms, getSpecialPlatforms } = useContext(SpecialPlatformContext)
 
+    //defines current user, used for user-specific data
+    const currentUser = parseInt(localStorage.getItem("app_user_id"))
 
     //component state
     const [special, setSpecial] = useState({})
     const [cleanStatus, setCleanStatus] = useState(false)
 
-
+    //creates variables for data coming from the other tables
     const specialLengthId = parseInt(special.specialLengthId)
     const specialPlatformId = parseInt(special.specialPlatformId)
     const specialGenreId = parseInt(special.specialGenreId)
-
+        //create numerical 1-10 dropdown
         const ratingDropdowns = () => {
             const optionDropdownArray = [] 
             for (let i = 1; i <= 10; i++) {
@@ -73,7 +79,7 @@ export const SpecialForm = (props) => {
        getSpecialToEdit()
    }, [specials])
 
-
+   //differentiates use of change or add special based on if toEdit is true
    const addNewSpecial = () => {
        
         console.log("special Genre:", specialGenreId)
@@ -95,7 +101,7 @@ export const SpecialForm = (props) => {
                 id: special.id,
                 name: special.name,
                 comicName: special.comicName,
-                rating: special.rating,
+                rating: parseInt(special.rating),
                 specialLengthId: specialLengthId,
                 specialPlatformId: specialPlatformId,
                 cost: special.cost,
@@ -104,7 +110,7 @@ export const SpecialForm = (props) => {
                 specialGenreId: specialGenreId,
                 userId: parseInt(localStorage.getItem("app_user_id"))
             })
-            .then(() => props.history.push("/specials"))
+            .then(() => props.history.push(`/users/${currentUser}`))
         }
            else {
            addSpecial({
@@ -119,17 +125,17 @@ export const SpecialForm = (props) => {
                 specialGenreId: specialGenreId,
                 userId: parseInt(localStorage.getItem("app_user_id"))
            })
-           .then(() => props.history.push("/specials"))
+           .then(() => props.history.push(`/users/${currentUser}`))
        }
    }
 }
+    //clean status is supposed to change to true if the checkbox is clicked
    const clean = (event) => {
-
     setCleanStatus(event.target.checked)
-    
     }
 
-
+    
+//form renders differently depending on if it is edit or add
    return (
        <form className="specialForm">
            <h2 className="specialForm__title">{toEdit ? "Edit Special's Details" : "Add Special"}</h2>

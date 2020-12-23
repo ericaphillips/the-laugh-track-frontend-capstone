@@ -1,4 +1,4 @@
-//List of comedians. Renders on /comedians and on a user's page, but only the comedian's they've entered
+//List of comedians. Renders on /comedians and on a user's page, but only the comedians they've entered
 import React, { useContext, useEffect, useState } from "react"
 import { ComedianContext } from "./ComedianProvider"
 import { Comedian } from "./Comedian"
@@ -11,9 +11,11 @@ a property object to the comedian
 */
 
 export const ComedianList = (props) => {
+    //context providers for data
     const { comedians, getComedians, deleteComedian, searchTerms } = useContext(ComedianContext)
     const { users, getUsers } = useContext(UserContext)
 
+    //defines current user, used for user-specific data
     const currentUser = parseInt(localStorage.getItem("app_user_id"))
 
     //since no longer displaying all comedians
@@ -40,6 +42,9 @@ export const ComedianList = (props) => {
     }
  }, [searchTerms, comedians])
 
+ /*returns a button to add a comedian, a filtered list of comedians based on search,
+and if the current user is the user who entered the comedian, renders a button to delete the comedian
+*/
     return (
         <div className="comedians">
             <h1>Comedians</h1>
