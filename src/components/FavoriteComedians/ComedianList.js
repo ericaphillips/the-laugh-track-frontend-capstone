@@ -4,6 +4,8 @@ import { ComedianContext } from "./ComedianProvider"
 import { Comedian } from "./Comedian"
 import "./Comedian.css"
 import { UserContext } from "../users/UserProvider"
+import { ComediansDropdown } from "../SortingDropdowns/ComedianSort"
+import { ComedianSearch } from "./ComedianSearch"
 
 /*
 add props as a parameter because you're passing
@@ -48,9 +50,13 @@ and if the current user is the user who entered the comedian, renders a button t
     return (
         <div className="comedians">
             <h1>Comedians</h1>
-            <button onClick={() => props.history.push("/comedians/createNewComedian")}>
+            <div className="topOfPage">
+            <button class="button__AddComedian" onClick={() => props.history.push("/comedians/createNewComedian")}>
                 Add a Favorite Comedian
             </button>
+                <ComedianSearch />
+                <ComediansDropdown />
+                </div>
             <article className="comedianList">
                 {
                     filteredComedians.map(comedian => {
@@ -77,10 +83,12 @@ and if the current user is the user who entered the comedian, renders a button t
                         Delete Comedian
                         </button>
                     }
+                    
             </section>
                     )})
                 }
             </article>
+            
         </div>
     )
 

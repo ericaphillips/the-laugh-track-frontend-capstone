@@ -14,3 +14,23 @@
 .comedian__podcast {
     padding-top: 2px;
 }
+
+.comedianList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.comedianListTwo {
+    flex-basis: 25%
+}
+
+h1 {
+    text-align: center ;
+}
+
+.topOfPage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

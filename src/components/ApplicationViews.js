@@ -20,6 +20,7 @@ import { UserPage } from "./users/UserPage"
 import { UserForm } from "./users/UserInfoForm"
 
 
+
 export const ApplicationViews = (props) => {
     return (
         <>
@@ -57,8 +58,7 @@ export const ApplicationViews = (props) => {
         <ComedianProvider>
             <Route exact path="/comedians" render={
                 props => <>
-                <ComedianSearch />
-                <ComediansDropdown {...props}/>
+                
                 <ComedianList {...props} />
                 </>
             } />

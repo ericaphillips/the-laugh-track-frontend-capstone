@@ -54,7 +54,6 @@ export const ComediansDropdown = (props) => {
         
         <form className="comedianDropdown">
             <div className="comedianDropdown__header">Sort comedians:</div>
-            <fieldset>
                 <div className="comedianDropdown__options">
                 <select name="sort__comedian" className="form-control" id="sort--comedian" onChange={handleSort}>
                     <option value="0">Sort By</option>
@@ -63,7 +62,7 @@ export const ComediansDropdown = (props) => {
                     <option value="comedian--entered">Date Entered</option>
                     </select>
                 </div>
-            </fieldset>
+           
         </form>
         </>
     )

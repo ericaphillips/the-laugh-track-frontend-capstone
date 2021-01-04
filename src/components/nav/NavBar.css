@@ -1,0 +1,18 @@
+#logo {
+    height: 75px;
+    width: 200px
+}
+
+.logout--button {
+    align-self: flex-start ;
+}
+
+.navBar__top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navBar__bottom {
+    display: flex;
+    justify-content: space-between;
+}
