@@ -2,10 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 body {
-    font-family: 'Montserrat'
+    font-family: 'Montserrat';
+    color: #DDCFCF;
+    /* text-shadow: 1px 1px 1px #2E232E; */
 }
 .comedian {
-    padding-top: 1em;
+    padding-left: 5px
 }
 
 .comedian__comments {
@@ -34,33 +36,109 @@ body {
 }
 
 .comedianListTwo:nth-child(3n+3) {
-    background-color:#002A32;
-    color: white;
+    background-color:#004452;
+    color:#F5F5F5;
+    border-radius: 35px;
 }
 
 .comedianListTwo:nth-child(3n+1) {
     background-color:#6F2C3E;
-    color: white;
+    color: #F5F5F5;
+    border-radius: 35px;
 }
 
 .comedianListTwo:nth-child(3n+2) {
-    background-color:#E59500;
-    color: white;
+    background-color:#CC8500;
+    color: #F5F5F5;
+    border-radius: 35px;
 }
 
-h1, h4 {
+h1 {
     text-align: center ;
-    font-family: 'BioRhyme'
+    font-family: 'BioRhyme';
+    color: #002A32;
+    text-shadow: none;
+}
+
+h4 {
+    text-align: center ;
+    font-family: 'BioRhyme';
+    text-shadow: 1px 1px #3D3B30;
+}
+
+a:link, a:visited, a:active {
+    color: #F5F5F5;
+    text-shadow: none;
 }
 
 .topOfPage {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
+   
 }
 
 .button--addComedian {
-    color: pink;
-    text-align: left;
-    font-family: 'Montserrat'
+    outline: none;
+    background: none;
+    transition: .5s;
+    font-family: 'Montserrat';
+    border-radius: 2px;
+    padding: 5px;
+    margin: 7px;
+    border: 1px solid #002A32;
+}
+.button--addComedian:hover {
+    transform:scale(1.1); 
+    border: none;
+}
+
+.deleteComedian {
+    outline: none;
+    background: none;
+    font-family: 'Montserrat';
+    border-radius: 2px;
+    padding: 5px;
+    margin: 7px;
+    border: none;
+    color: #F5F5F5;
+    
+}
+
+.deleteComedian:hover {
+    transform:scale(1.1); 
+    border: none;
+    text-shadow: 1px 1px #E01530
+} 
+
+.button--comedianDetails {
+    outline: none;
+    background: none;
+    font-family: 'Montserrat';
+    border-radius: 2px;
+    padding: 5px;
+    margin: 7px;
+    border: none;
+    color: #F5F5F5;
+}
+.button--comedianDetails:hover {
+    transform:scale(1.1); 
+    border: none;
+    text-shadow: 1px 1px #382B38
+}
+
+
+
+.comedian--search {
+    color: #002A32
+}
+
+.comedianDropdown {
+    color: #002A32;
+    text-shadow: none;
+} 
+
+.comedianDropdown__header {
+    color: #002A32;
+    text-shadow: none;
 }

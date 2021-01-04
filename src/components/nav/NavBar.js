@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react"
 import { Link, Route } from 'react-router-dom'
 import { Logout } from '../auth/Logout'
-import logo from "../pictures/full_logo_trans_new.png"
+import logo from "../pictures/logo_full_trans_newest.png"
 import "./NavBar.css"
 
 export const NavBar = (props) => {

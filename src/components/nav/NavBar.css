@@ -3,12 +3,13 @@
 
 #logo {
     height: 95px;
-    width: 245px
+    width: 305px
 }
 
 
 .navBar {
     background-color: #FFE3D6;
+    display: flex;
 }
 
 .navbar__left {
@@ -16,7 +17,8 @@
 }
 
 .navbar__right {
-    align-items: flex-end;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .nav__button {

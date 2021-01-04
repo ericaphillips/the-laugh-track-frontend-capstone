@@ -65,13 +65,13 @@ and if the current user is the user who entered the comedian, renders a button t
                             <section className="comedianListTwo" key={comedian.id}>
                         <Comedian comedian={comedian} user={user} />
                         
-                        <button onClick={() => {
+                        <button class="button--comedianDetails" onClick={() => {
                         props.history.push(`/comedians/${comedian.id}`)
                         }}>View Comedian's Details</button>
                         
                         {/*Button only shows if the currently logged in user entered the comedian*/}
                         {currentUser === parseInt(comedian.userId)  && 
-                        <button className="btn--release"
+                        <button class="deleteComedian"
                         onClick={
                         () => {
                             deleteComedian(comedian.id)
