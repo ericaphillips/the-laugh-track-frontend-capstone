@@ -1,18 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=BioRhyme&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 #logo {
-    height: 75px;
-    width: 200px
+    height: 95px;
+    width: 245px
 }
 
-.logout--button {
-    align-self: flex-start ;
+
+.navBar {
+    background-color: #FFE3D6;
 }
 
-.navBar__top {
-    display: flex;
-    justify-content: space-between;
+.navbar__left {
+    align-self: flex-start;
 }
 
-.navBar__bottom {
-    display: flex;
-    justify-content: space-between;
+.navbar__right {
+    align-items: flex-end;
+}
+
+.nav__button {
+    outline: none;
+    background: none;
+    transition: .5s;
+    font-family: 'Montserrat';
+    border-radius: 2px;
+    padding: 2px;
+    margin: 7px;
+    border: 1px #002A32;
+    
+}
+
+.nav__button:hover {
+  
+    transform:scale(1.1); 
+    border: none;
 }

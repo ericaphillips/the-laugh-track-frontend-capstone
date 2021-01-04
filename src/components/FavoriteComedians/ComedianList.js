@@ -51,7 +51,7 @@ and if the current user is the user who entered the comedian, renders a button t
         <div className="comedians">
             <h1>Comedians</h1>
             <div className="topOfPage">
-            <button class="button__AddComedian" onClick={() => props.history.push("/comedians/createNewComedian")}>
+            <button class="button--addComedian" onClick={() => props.history.push("/comedians/createNewComedian")}>
                 Add a Favorite Comedian
             </button>
                 <ComedianSearch />

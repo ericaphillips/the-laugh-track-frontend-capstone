@@ -9,7 +9,7 @@ export const Logout = (props) => {
     props.history.push("/login")
     }
 
-   return ( <button className="logout--button" onClick={handleLogout}>
+   return ( <button className="nav__button" onClick={handleLogout}>
                             Log Out
                         </button>
    )

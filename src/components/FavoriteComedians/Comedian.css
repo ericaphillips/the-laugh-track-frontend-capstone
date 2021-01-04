@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=BioRhyme&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body {
+    font-family: 'Montserrat'
+}
 .comedian {
     padding-top: 1em;
 }
@@ -22,15 +28,39 @@
 }
 
 .comedianListTwo {
-    flex-basis: 25%
+    flex-basis: 20%;
+    margin: 10px;
+    padding: 5px;
 }
 
-h1 {
+.comedianListTwo:nth-child(3n+3) {
+    background-color:#002A32;
+    color: white;
+}
+
+.comedianListTwo:nth-child(3n+1) {
+    background-color:#6F2C3E;
+    color: white;
+}
+
+.comedianListTwo:nth-child(3n+2) {
+    background-color:#E59500;
+    color: white;
+}
+
+h1, h4 {
     text-align: center ;
+    font-family: 'BioRhyme'
 }
 
 .topOfPage {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+.button--addComedian {
+    color: pink;
+    text-align: left;
+    font-family: 'Montserrat'
 }

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react"
 import { Link, Route } from 'react-router-dom'
 import { Logout } from '../auth/Logout'
-import logo from "../pictures/full_logo_trans.png"
+import logo from "../pictures/full_logo_trans_new.png"
 import "./NavBar.css"
 
 export const NavBar = (props) => {
@@ -10,25 +10,29 @@ export const NavBar = (props) => {
 
     return (
         <>
-        <div className="navBar__top">
+        <div className="navBar">
+        <div className="navbar__left">
+        <Link to={`/home`}>
          <img id="logo" alt="Laugh Track Logo" src={logo} />
-         <Route render={
-                    props => <Logout {...props} />
-                } />
-        </div>
-        <div className="navBar__bottom">
-            <button onClick={() => {
+         </Link>
+         </div>
+         <div className="navbar__right">
+            <button className="nav__button" onClick={() => {
                 props.history.push("/home")
             }}>Home</button>
-            <button onClick={() => {
+            <button className="nav__button" onClick={() => {
                 props.history.push("/comedians")
             }}>Comedians</button>
-            <button onClick={() => {
+            <button className="nav__button" onClick={() => {
                 props.history.push("/specials")
             }}>Specials</button>
-            <button onClick={() => {
+            <button className="nav__button" onClick={() => {
                 props.history.push(`/users/${currentUser}`)
             }}>My Profile</button>
+            <Route render={
+                    props => <Logout {...props} />
+                } />
+                </div>
         </div>
         </>
     )
