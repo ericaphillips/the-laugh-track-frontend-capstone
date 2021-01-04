@@ -73,11 +73,7 @@ Always renders veiw details buttons regardless of who current user is
 */
     return (
         <>
-        {currentUser === parseInt(props.match.params.userId)  && 
-         <button onClick={() => props.history.push(`/users/edit/${currentUser}`)}>
-              Edit User
-           </button>
-        }
+        
 
         <section className="users__page">
         <section className="users__info">
@@ -96,11 +92,11 @@ Always renders veiw details buttons regardless of who current user is
                     return (
                     <section className="userSpecialList" key={special.id}>
                     <Special special={special} user={user} />
-                    <button onClick={() => {
+                    <button class="button--specialDetails" onClick={() => {
                         props.history.push(`/specials/${special.id}`)
                         }}>View Special's Details</button>
                     {currentUser === parseInt(special.userId)  && 
-               <button className="btn--release"
+               <button className="deleteSpecial"
             onClick={
                 () => {
                     deleteSpecial(special.id)
@@ -119,7 +115,7 @@ Always renders veiw details buttons regardless of who current user is
             }
         </div>
         {currentUser === parseInt(props.match.params.userId)  && 
-        <button onClick={() => props.history.push("/specials/createNewSpecial")}>
+        <button className="button--addSpecial" onClick={() => props.history.push("/specials/createNewSpecial")}>
                Add Special
            </button>
         }
@@ -127,17 +123,17 @@ Always renders veiw details buttons regardless of who current user is
         <section className="users__comedians">
             <h1>{user.name}'s Favorite Comedians</h1>
             <ComediansDropdown />
-            <div className="users__comedians">
+            <div className="user__Comedians">
                 {
                     userComedians.map(comedian => {
                         return (
                         <section className="userComedianList" key={comedian.id}>
                         <Comedian comedian={comedian} user={user} />
-                        <button onClick={() => {
+                        <button class="button--comedianDetails" onClick={() => {
                         props.history.push(`/comedians/${comedian.id}`)
                         }}>View Comedian's Details</button>
                         {currentUser === parseInt(comedian.userId)  && 
-                        <button className="btn--release"
+                        <button className="deleteComedian"
                         onClick={
                         () => {
                             deleteComedian(comedian.id)
@@ -155,12 +151,17 @@ Always renders veiw details buttons regardless of who current user is
                 }
             </div>
             {currentUser === parseInt(props.match.params.userId)  &&         
-            <button onClick={() => props.history.push("/comedians/createNewComedian")}>
+            <button class="button--addComedian" onClick={() => props.history.push("/comedians/createNewComedian")}>
                 Add a Favorite Comedian
             </button>
             }
         </section>
         </section>
+        {currentUser === parseInt(props.match.params.userId)  && 
+         <button class="edit--user" onClick={() => props.history.push(`/users/edit/${currentUser}`)}>
+              Edit User
+           </button>
+        }
         </>
     )
     

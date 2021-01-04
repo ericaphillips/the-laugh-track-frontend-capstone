@@ -31,8 +31,6 @@ export const ApplicationViews = (props) => {
         <SpecialProvider>
             <Route exact path="/specials" render={
                 props => <>
-                <SpecialSearch {...props}/>
-                <SpecialsDropdown {...props}/>
                 <SpecialList {...props} />
                 </>
             } />

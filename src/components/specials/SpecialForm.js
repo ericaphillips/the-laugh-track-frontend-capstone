@@ -139,7 +139,7 @@ export const SpecialForm = (props) => {
    return (
        <form className="specialForm">
            <h2 className="specialForm__title">{toEdit ? "Edit Special's Details" : "Add Special"}</h2>
-           <fieldset>
+           
                <div className="form-section">
                    <label htmlFor="name">Special name: </label>
                    <input type="text" name="name" required autoFocus className="form-control" 
@@ -148,8 +148,8 @@ export const SpecialForm = (props) => {
                    onChange={handleSpecialEdit}
                    />
                </div>
-           </fieldset>
-           <fieldset>
+          
+           
                <div className="form-section">
                    <label htmlFor="comicName">Comedian's name: </label>
                    <input type="text" name="comicName" required autoFocus className="form-control" 
@@ -158,8 +158,7 @@ export const SpecialForm = (props) => {
                    onChange={handleSpecialEdit}
                    />
                </div>
-           </fieldset>
-           <fieldset>
+          
                <div className="form-section">
                    <label htmlFor="rating">Your rating: </label>
                    <select name="rating" className="form-control"
@@ -169,8 +168,7 @@ export const SpecialForm = (props) => {
                     {ratingDropdowns()}
                     </select>
                </div>
-            </fieldset>
-            <fieldset>
+            
                <div className="form-section">
                    <label htmlFor="specialLength">Special's Length: </label>
                    <select name="specialLengthId" className="form-control" 
@@ -184,8 +182,7 @@ export const SpecialForm = (props) => {
                        ))}
                    </select>
                </div>
-           </fieldset>
-           <fieldset>
+           
                <div className="form-section">
                    <label htmlFor="specialPlatform">Special's Platform: </label>
                    <select name="specialPlatformId" className="form-control" 
@@ -199,8 +196,7 @@ export const SpecialForm = (props) => {
                        ))}
                    </select>
                </div>
-           </fieldset>
-           <fieldset>
+           
                <div className="form-section">
                    <label htmlFor="cost">Special's cost: </label>
                    <input type="text" name="cost" required autoFocus className="form-control" 
@@ -208,8 +204,7 @@ export const SpecialForm = (props) => {
                    value={special.cost}
                    onChange={handleSpecialEdit}/>
                </div>
-           </fieldset>
-           <fieldset>
+           
                <div className="form-section">
                    <label htmlFor="specialGenre">Special's Genre: </label>
                    <select name="specialGenreId" className="form-control" 
@@ -223,8 +218,7 @@ export const SpecialForm = (props) => {
                        ))}
                    </select>
                </div>
-           </fieldset>
-           <fieldset>
+           
                <div className="form-section">
                    <label htmlFor="clean">Is the special clean? </label>
                     <input
@@ -235,8 +229,7 @@ export const SpecialForm = (props) => {
                     }}
                     />
                </div>
-            </fieldset>
-            <fieldset>
+           
                <div className="form-section">
                    <label htmlFor="comments">Your comments and additional information: </label>
                    <textarea type="text" name="comments" required autoFocus className="form-control" 
@@ -244,13 +237,13 @@ export const SpecialForm = (props) => {
                    value={special.comments}
                    onChange={handleSpecialEdit}/>
                </div>
-           </fieldset>
+           
            <button type="submit"
            onClick={event => {
                event.preventDefault()
                 addNewSpecial()
            }}
-           className="button button-submit">
+           className="button--save">
              {toEdit ? "Save Changes" : "Add Special"}
            </button>
        </form>

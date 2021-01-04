@@ -71,7 +71,7 @@ and if the current user is the user who entered the comedian, renders a button t
                         
                         {/*Button only shows if the currently logged in user entered the comedian*/}
                         {currentUser === parseInt(comedian.userId)  && 
-                        <button class="deleteComedian"
+                        <button class="deleteComedian" 
                         onClick={
                         () => {
                             deleteComedian(comedian.id)

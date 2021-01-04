@@ -68,7 +68,6 @@ export const SpecialsDropdown = (props) => {
         
         <form className="specialDropdown">
             <div className="specialDropdown__header">Sort specials:</div>
-            <fieldset>
                 <div className="specialDropdown__options">
                 <select name="sort__special" className="form-control" id="sort--special" onChange={handleSort}>
                     <option value="0">Sort By</option>
@@ -81,7 +80,6 @@ export const SpecialsDropdown = (props) => {
                     <option value="special--entered">Date Entered</option>
                     </select>
                 </div>
-            </fieldset>
         </form>
         </>
     )

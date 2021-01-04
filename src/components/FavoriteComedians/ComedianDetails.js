@@ -37,22 +37,22 @@ export const ComedianDetails = (props) => {
     }, [comedians])
 
     return (
-        <section className="comedian">
+        <section className="comedian__details">
             <h3 className="comedian__name">{comedian.name}</h3>
             <div className="comedian__watched">{user.name}'s Watched List: {comedian.watched}</div>
             <div className="comedian__toWatch">{user.name}'s To Watch List: {comedian.toWatch}</div>
-            <div className="comedian__podcast">Does this comedian have a podcast? {comedian.podcast}</div>
+            <div className="comedian__podcast">Does this comedian have a podcast?: {comedian.podcast}</div>
             <div className="comedian__comments">{user.name}'s Comments: {comedian.comments}</div>
 
     {/*Buttons only show if the currently logged in user entered the comedian*/}
     {currentUser === parseInt(comedian.userId)  && 
-            <button onClick={() => {
+            <button class="button--details" onClick={() => {
                 props.history.push(`/comedians/edit/${comedian.id}`)
             }}>Edit Comedian's Details</button>
         }
         
     {currentUser === parseInt(comedian.userId)  && 
-            <button className="btn--release"
+            <button className="button--deleteComedian"
                         onClick={
                         () => {
                             deleteComedian(comedian.id)

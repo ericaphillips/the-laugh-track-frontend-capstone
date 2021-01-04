@@ -1,11 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=BioRhyme&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+
+body {
+    font-family: 'Montserrat';
+    color: #2E232E;
+
+}
 .users__page {
     display: flex;
     flex-wrap: wrap;
-    align-content: space-between;
+    justify-content: space-between;
 } 
 
 .users__info {
-    border: 1px solid rgb(97, 97, 97);
+    border: 2px solid #CC8500;
+    border-top: 30px solid #CC8500;
     margin: 10px;
     padding-left: 5px;
     padding-bottom: 5px;
@@ -13,7 +23,8 @@
 }
 
 .users__specials {
-    border: 1px solid rgb(97, 97, 97);
+    border: 2px solid #004452;
+    border-top: 30px solid #004452;
     margin: 10px;
     padding-left: 5px;
     padding-bottom: 5px;
@@ -21,25 +32,151 @@
 }
 
 .users__comedians {
-    border: 1px solid rgb(97, 97, 97);
+    border: 2px solid #6F2C3E;
+    border-top: 30px solid #6F2C3E;
     margin: 10px;
     padding-left: 5px;
     padding-bottom: 5px;
     flex-basis: 25%;
 }
 
-.user__Specials {
-    border: 1px solid rgb(97, 97, 97);
+.userSpecialList {
+    border: 1px solid #004452;
     margin: 10px;
     padding-left: 5px;
     padding-bottom: 10px;
     flex-basis: 25%;
 }
 
-.user__Comedians {
-    border: 1px solid rgb(97, 97, 97);
+.userComedianList {
+    border: 1px solid #6F2C3E;
     margin: 10px;
     padding-left: 5px;
     padding-bottom: 10px;
     flex-basis: 25%;
 }
+
+.specialDropdown {
+    color: #2E232E;
+    text-shadow: none;
+    text-align: center; 
+}
+
+.comedianDropdown {
+    color: #2E232E;
+    text-shadow: none;
+    text-align: center;
+} 
+
+
+.button--addComedian {
+    outline: none;
+    background: none;
+    transition: .5s;
+    font-family: 'Montserrat';
+    border-radius: 2px;
+    padding: 5px;
+    margin: 7px;
+    border: 1px solid #2E232E;
+}
+.button--addComedian:hover {
+    transform:scale(1.1); 
+    border: none;
+}
+
+
+.button--addSpecial {
+    outline: none;
+    background: none;
+    transition: .5s;
+    font-family: 'Montserrat';
+    border-radius: 2px;
+    padding: 5px;
+    margin: 7px;
+    border: 1px solid #2E232E;
+}
+.button--addSpecial:hover {
+    transform:scale(1.1); 
+    border: none;
+}
+
+.deleteComedian {
+    outline: none;
+    background: none;
+    font-family: 'Montserrat';
+    border-radius: 2px;
+    padding: 5px;
+    margin: 7px;
+    border: none;
+    color: #6F2C3E;
+    
+}
+
+.deleteComedian:hover {
+    transform:scale(1.1); 
+    border: none;
+} 
+
+.deleteSpecial {
+    outline: none;
+    background: none;
+    font-family: 'Montserrat';
+    border-radius: 2px;
+    padding: 5px;
+    margin: 7px;
+    border: none;
+    color: #6F2C3E;
+    
+}
+
+.deleteSpecial:hover {
+    transform:scale(1.1); 
+    border: none;
+} 
+
+.button--comedianDetails {
+    outline: none;
+    background: none;
+    font-family: 'Montserrat';
+    border-radius: 2px;
+    padding: 5px;
+    margin: 7px;
+    border: none;
+    color: #2E232E;
+}
+.button--comedianDetails:hover {
+    transform:scale(1.1); 
+    border: none;
+}
+
+.button--specialDetails {
+    outline: none;
+    background: none;
+    font-family: 'Montserrat';
+    border-radius: 2px;
+    padding: 5px;
+    margin: 7px;
+    border: none;
+    color: #2E232E;
+}
+.button--specialDetails:hover {
+    transform:scale(1.1); 
+    border: none;
+}
+
+.edit--user {
+    outline: none;
+    background: none;
+    transition: .5s;
+    font-family: 'Montserrat';
+    border-radius: 2px;
+    padding: 5px;
+    margin: 7px;
+    border: 1px solid #2E232E;
+}
+
+.edit--user:hover {
+    transform:scale(1.1); 
+    border: none;
+}
+

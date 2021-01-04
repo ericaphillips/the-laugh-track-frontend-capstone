@@ -4,6 +4,8 @@ import { SpecialContext } from "./SpecialProvider"
 import { Special } from "./Special"
 import "./Special.css"
 import { UserContext } from "../users/UserProvider"
+import { SpecialsDropdown } from "../SortingDropdowns/SpecialSort"
+import { SpecialSearch } from "./SpecialSearch"
 
 /* add props as a parameter because you're passing a property 
 object to the special
@@ -46,9 +48,13 @@ and if the current user is the user who entered the special, renders a button to
    return (
        <div className="specials">
            <h1>Specials</h1>
-           <button onClick={() => props.history.push("specials/createNewSpecial")}>
+           <div className="topOfPage">
+           <button className="button--addSpecial" onClick={() => props.history.push("specials/createNewSpecial")}>
                Add Special
            </button>
+           <SpecialSearch />
+           <SpecialsDropdown />
+           </div>
            <article className="specialList">
                {
                filteredSpecials.map(special => {
@@ -57,13 +63,13 @@ and if the current user is the user who entered the special, renders a button to
                <section className="specialListTwo" key={special.id}>
                <Special special={special} user={user} />
                 
-                <button onClick={() => {
+                <button className="button--specialDetails" onClick={() => {
                 props.history.push(`/specials/${special.id}`)
                 }}>View Special's Details</button>
                 
                 {/*Button only shows if the currently logged in user entered the special*/}
                {currentUser === parseInt(special.userId)  && 
-               <button className="btn--release"
+               <button className="deleteSpecial"
                 onClick={
                 () => {
                     deleteSpecial(special.id)

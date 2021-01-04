@@ -90,7 +90,7 @@ export const ComedianForm = (props) => {
    return (
        <form className="comedianForm">
            <h2 className="comedianForm__title">{toEdit ? "Edit Comedian's Details" : "Add Comedian"}</h2>
-            <fieldset>
+            
                 <div className="form-section">
                     <label htmlFor="name">Comedian's Name: </label>
                     <input type="text" name="name" required autoFocus className="form-control"
@@ -99,8 +99,7 @@ export const ComedianForm = (props) => {
                     onChange={handleComedianEdit}
                     />
                 </div>
-            </fieldset>
-            <fieldset>          
+                     
                 <div className="form-section">
                     <label htmlFor="name">Things you've watched by this comedian: </label>
                     <input type="text" name="watched" required autoFocus className="form-control"
@@ -109,8 +108,7 @@ export const ComedianForm = (props) => {
                     onChange={handleComedianEdit}
                     />
                 </div>
-            </fieldset>
-            <fieldset>
+            
                 <div className="form-section">
                     <label htmlFor="name">Things you want to watch by this comedian: </label>
                     <input type="text" name="toWatch" required autoFocus className="form-control"
@@ -119,8 +117,7 @@ export const ComedianForm = (props) => {
                     onChange={handleComedianEdit}
                     />
                 </div>
-            </fieldset>
-            <fieldset>
+            
                 <div className="form-section">
                     <label htmlFor="podcast">Do they have a podcast? Check if yes: </label>
                     <input
@@ -131,8 +128,7 @@ export const ComedianForm = (props) => {
                     }}
                     />
                 </div>
-            </fieldset>
-            <fieldset>
+            
                 <div className="form-section">
                     <label htmlFor="name">Comments on this comedian: </label>
                     <input type="text" name="comments" required autoFocus className="form-control"
@@ -141,13 +137,13 @@ export const ComedianForm = (props) => {
                     onChange={handleComedianEdit}
                     />
                 </div>
-            </fieldset>
+            
             <button type="submit"
             onClick={event => {
                 event.preventDefault()
                 addNewComedian()
             }}
-            className="button button-submit">
+            className="button--save">
                 {toEdit ? "Save Changes" : "Add Comedian"}
             </button>
        </form>

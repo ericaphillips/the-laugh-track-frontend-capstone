@@ -10,6 +10,7 @@
 .navBar {
     background-color: #FFE3D6;
     display: flex;
+    justify-content: space-between;
 }
 
 .navbar__left {
