@@ -7,17 +7,14 @@ import { SpecialLengthProvider } from "./SpecialDropdowns/SpecialLengthProvider"
 import { SpecialPlatformProvider } from "./SpecialDropdowns/SpecialPlatformProvider"
 import { SpecialGenreProvider } from "./SpecialDropdowns/SpecialGenreProvider"
 import { SpecialDetails } from "./specials/SpecialDetails"
-import { SpecialSearch } from "./specials/SpecialSearch"
-import { SpecialsDropdown } from "./SortingDropdowns/SpecialSort"
 import { UserProvider } from "./users/UserProvider"
 import { ComedianProvider } from "./FavoriteComedians/ComedianProvider"
 import { ComedianList } from "./FavoriteComedians/ComedianList"
 import { ComedianForm } from "./FavoriteComedians/ComedianForm"
 import { ComedianDetails } from "./FavoriteComedians/ComedianDetails"
-import { ComedianSearch } from "./FavoriteComedians/ComedianSearch"
-import { ComediansDropdown } from "./SortingDropdowns/ComedianSort"
 import { UserPage } from "./users/UserPage"
 import { UserForm } from "./users/UserInfoForm"
+import { Homepage } from "./homepage/homepage"
 
 
 
@@ -101,6 +98,12 @@ export const ApplicationViews = (props) => {
     </SpecialPlatformProvider>
     </SpecialProvider>
     </ComedianProvider>
+
+    <UserProvider>
+            <Route path="/home" render={
+                props => <Homepage {...props} />
+            } />
+    </UserProvider>
         </>
     )
 }

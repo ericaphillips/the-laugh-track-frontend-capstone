@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=BioRhyme&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body {
+    font-family: 'Montserrat';
+    color: #2E232E;
+
+}
+
+h1 {
+    font-family: 'BioRhyme';
+    color: #2E232E;
+    text-shadow: none;
+    text-align: left;
+}
