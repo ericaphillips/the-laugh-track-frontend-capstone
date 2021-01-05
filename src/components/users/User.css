@@ -46,6 +46,7 @@ body {
     padding-left: 5px;
     padding-bottom: 10px;
     flex-basis: 25%;
+    background-color: #F5F5F5;
 }
 
 .userComedianList {
@@ -54,6 +55,7 @@ body {
     padding-left: 5px;
     padding-bottom: 10px;
     flex-basis: 25%;
+    background-color: #F5F5F5;
 }
 
 .specialDropdown {
@@ -84,6 +86,21 @@ body {
     border: none;
 }
 
+.button--inputSubmit {
+    outline: none;
+    background: none;
+    transition: .5s;
+    font-family: 'Montserrat';
+    border-radius: 2px;
+    padding: 5px;
+    margin: 7px;
+    border: 1px solid #2E232E;
+}
+
+.button--inputSubmit:hover {
+    transform:scale(1.1); 
+    border: none;
+}
 
 .button--addSpecial {
     outline: none;

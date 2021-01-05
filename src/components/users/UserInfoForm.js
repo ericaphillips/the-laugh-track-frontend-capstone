@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState} from "react"
 import { UserContext } from "./UserProvider"
 import { useForm } from "react-hook-form"
+import "./User.css"
 
 //form used to take in information about a user (prof pic and description)
 export const UserForm = (props) => {
@@ -43,7 +44,7 @@ export const UserForm = (props) => {
         <form onSubmit={handleSubmit(submitDescription)}>
             <label htmlFor="user__description">Add Description</label>
             <input type="text" name="description" ref={register} />
-            <input type="submit" />
+            <input className="button--inputSubmit" type="submit" />
         </form>
         </>
     )

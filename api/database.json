@@ -3,7 +3,7 @@
     {
       "email": "stella@stella.com",
       "password": "stella",
-      "name": "Stella dog",
+      "name": "Erica P",
       "profPic": "Screen Shot 2020-12-16 at 10.39.52 AM.png",
       "description": "I love comedy so much!!! Laughing is great!!",
       "id": 4
@@ -11,7 +11,7 @@
     {
       "email": "test5@test5.com",
       "password": "test",
-      "name": "tester5 tester5",
+      "name": "Gustav D",
       "profPic": "",
       "description": "",
       "id": 5
@@ -23,6 +23,22 @@
       "profPic": "",
       "description": "",
       "id": 6
+    },
+    {
+      "email": "sam@sam.com",
+      "password": "sam",
+      "name": "Sam C",
+      "profPic": "",
+      "description": "Comedy is cool and fun. I like lighter-hearted stuff, especially dad jokes. I make great ones. I love puns.",
+      "id": 7
+    },
+    {
+      "email": "stelladog@stella.com",
+      "password": "stella",
+      "name": "Stella D",
+      "profPic": "",
+      "description": "I love comedy so much!!!! I wish I was always watching comedy!!!!!",
+      "id": 8
     }
   ],
   "specials": [
@@ -77,18 +93,191 @@
       "comments": "He's so funny!!!",
       "specialGenreId": 14,
       "userId": 4
+    },
+    {
+      "name": "Jigsaw",
+      "comicName": "Daniel Sloss",
+      "rating": 8,
+      "specialLengthId": 4,
+      "specialPlatformId": 6,
+      "cost": "Netflix Subscription",
+      "clean": "false",
+      "comments": "My girlfriend made me watch this on our like second date, very good relationship prep",
+      "specialGenreId": 7,
+      "userId": 7,
+      "id": 12
+    },
+    {
+      "name": "X",
+      "comicName": "Daniel Sloss",
+      "rating": 8,
+      "specialLengthId": 5,
+      "specialPlatformId": 4,
+      "cost": "HBO Subscription",
+      "clean": "false",
+      "comments": "There's a bit in here about horses that I love (almost as much as I love horses) but the end was very real and dark. Was not prepared.",
+      "specialGenreId": 7,
+      "userId": 7,
+      "id": 13
+    },
+    {
+      "id": 14,
+      "name": "Quarter Life Crisis",
+      "comicName": "Taylor Tomlinson",
+      "rating": 9,
+      "specialLengthId": 4,
+      "specialPlatformId": 6,
+      "cost": "Netflix Subscription",
+      "clean": "false",
+      "comments": "She is so funny! She is young and relatable and isn't as dark or weird as other specials I've been shown. I loved it.",
+      "specialGenreId": 22,
+      "userId": 7
+    },
+    {
+      "name": "I Got This",
+      "comicName": "Sam Morril",
+      "rating": 9,
+      "specialLengthId": 4,
+      "specialPlatformId": 7,
+      "cost": "Free",
+      "clean": "false",
+      "comments": "I like the hard-hitting kinda mean silly stuff",
+      "specialGenreId": 14,
+      "userId": 8,
+      "id": 15
+    },
+    {
+      "name": "Hot For My Name",
+      "comicName": "Esther Povitsky",
+      "rating": 8,
+      "specialLengthId": 4,
+      "specialPlatformId": 7,
+      "cost": "Free",
+      "clean": "false",
+      "comments": "I love all of the creative things she did in this special. I had seen some of this stuff at Zanies, and it was so fun to watch it recorded with the outfit changes and the \"bonus\" footage.",
+      "specialGenreId": 22,
+      "userId": 8,
+      "id": 16
+    },
+    {
+      "name": "Glitter Room",
+      "comicName": "Katherine Ryan",
+      "rating": 2,
+      "specialLengthId": 4,
+      "specialPlatformId": 6,
+      "cost": "Netflix Subscription",
+      "clean": "false",
+      "comments": "I really hated this. I wanted to like it so badly but I just couldn't.",
+      "specialGenreId": 14,
+      "userId": 8,
+      "id": 17
+    },
+    {
+      "name": "The New One",
+      "comicName": "Mike Birbiglia",
+      "rating": 1,
+      "specialLengthId": 4,
+      "specialPlatformId": 6,
+      "cost": "Netflix Subscription",
+      "clean": "false",
+      "comments": "I didn't want to mark this as dark comedy because I love dark comedy and hated this. This was so not funny and the man needs serious therapy.",
+      "specialGenreId": 7,
+      "userId": 8,
+      "id": 18
+    },
+    {
+      "name": "Right Now",
+      "comicName": "Aziz Ansari",
+      "rating": 2,
+      "specialLengthId": 4,
+      "specialPlatformId": 6,
+      "cost": "Netflix Subscription",
+      "clean": "false",
+      "comments": "This wasn't funny. It wasn't a good apology. It wasn't a fresh take. It wasn't a hot take. It was a waste of my time.",
+      "specialGenreId": 2,
+      "userId": 8,
+      "id": 19
+    },
+    {
+      "name": "Unveiled",
+      "comicName": "Iliza Schlesinger",
+      "rating": 1,
+      "specialLengthId": 4,
+      "specialPlatformId": 6,
+      "cost": "Netflix Subscription",
+      "clean": "false",
+      "comments": "I couldn't even finish this. I'm so torn on Iliza in general because some of her physical comedy is amazing, but a lot of her stuff just isn't funny. This is \"woo comedy\" and I really couldn't stand it.",
+      "specialGenreId": 14,
+      "userId": 8,
+      "id": 20
+    },
+    {
+      "name": "Baby Skeletons",
+      "comicName": "Adrienne Iapalucci",
+      "rating": 10,
+      "specialLengthId": 3,
+      "specialPlatformId": 8,
+      "cost": "$9.99 on iTunes",
+      "clean": "false",
+      "comments": "I'm not a big comedy album person but wow, this was amazing. I saw some of these jokes on the Impractical Jokers cruise, and I'm so glad I can hear them again on repeat. She is so funny and there is so much gold on this album.",
+      "specialGenreId": 7,
+      "userId": 8,
+      "id": 21
+    },
+    {
+      "name": "Mother Inferior",
+      "comicName": "Christina P",
+      "rating": 2,
+      "specialLengthId": 4,
+      "specialPlatformId": 6,
+      "cost": "Netflix Subscription",
+      "clean": "false",
+      "comments": "It hurts me to select dark comedy because she thinks she is funny and dark but she is just awful and not funny. I want this time of my life back.",
+      "specialGenreId": 7,
+      "userId": 4,
+      "id": 22
+    },
+    {
+      "name": "All Over The Map",
+      "comicName": "Jeff Dunham",
+      "rating": 1,
+      "specialLengthId": 4,
+      "specialPlatformId": 6,
+      "cost": "Netflix Subscription",
+      "clean": "false",
+      "comments": "I know I wrote it was 1 hour long but I made it about 10 minutes before having to turn it off. It's so bad.",
+      "specialGenreId": 17,
+      "userId": 4,
+      "id": 23
+    },
+    {
+      "name": "Baby Cobra",
+      "comicName": "Ali Wong",
+      "rating": 10,
+      "specialLengthId": 4,
+      "specialPlatformId": 6,
+      "cost": "Netflix Subscription",
+      "clean": "false",
+      "comments": "I love pregnancy jokes!!!",
+      "specialGenreId": 22,
+      "userId": 4,
+      "id": 24
+    },
+    {
+      "name": "Growing",
+      "comicName": "Amy Schumer",
+      "rating": 1,
+      "specialLengthId": 4,
+      "specialPlatformId": 6,
+      "cost": "Netflix Subscription",
+      "clean": "false",
+      "comments": "I think I made it about 30 minutes through before having to turn this off. Amy Schumer offends me with how awful she is.",
+      "specialGenreId": 14,
+      "userId": 4,
+      "id": 25
     }
   ],
   "comedians": [
-    {
-      "id": 4,
-      "name": "Adrienne Iapalucci",
-      "watched": "Degenerates special",
-      "toWatch": "Anything on YouTube",
-      "podcast": "true",
-      "comments": "She's so funny, her Ted Bundy is a hero bit had me dying!",
-      "userId": 5
-    },
     {
       "id": 6,
       "name": "Ryan O'Flanagan",
@@ -142,6 +331,141 @@
       "comments": "He's so funny! unexpectedly dark, his special that came out this year is amazing",
       "userId": 4,
       "id": 12
+    },
+    {
+      "name": "Sam C",
+      "watched": "Dad jokes all the time",
+      "toWatch": "More dad jokes whenever possible",
+      "podcast": "false",
+      "comments": "I'm the funniest person my jokes are the best",
+      "userId": 7,
+      "id": 13
+    },
+    {
+      "name": "Chris D'elia",
+      "watched": "Man On Fire, Incorrigible, No Pain, You, Alone Together, Whitney",
+      "toWatch": "Undateable",
+      "podcast": "true",
+      "comments": "He's so funny! He makes me cry with laughter all the time",
+      "userId": 4,
+      "id": 14
+    },
+    {
+      "name": "Dusty Slay",
+      "watched": "Local spots, Comedy Central standup on Youtube",
+      "toWatch": "Zanies shows one day!",
+      "podcast": "false",
+      "comments": "He's a local comic who is so funny. He deserves to be so much more well-known. ",
+      "userId": 8,
+      "id": 15
+    },
+    {
+      "name": "Sam Morril",
+      "watched": "I Got This",
+      "toWatch": "Anything else he has done",
+      "podcast": "false",
+      "comments": "He's really funny. I watched him mostly because he was dating Taylor Tomlinson, but I'm glad I did. I need to check out the rest of his stuff!",
+      "userId": 8,
+      "id": 16
+    },
+    {
+      "name": "John Mulaney",
+      "watched": "New In Town, Kid Gorgeous",
+      "toWatch": "Anything else!",
+      "podcast": "false",
+      "comments": "He's not my #1 and I don't love him as much as everyone else my age, but he is still very funny and talented",
+      "userId": 8,
+      "id": 17
+    },
+    {
+      "name": "Melissa Villasenor",
+      "watched": "I saw her once at Zanies and her appearance on Whitney Cummings' podcast",
+      "toWatch": "Anything I can!",
+      "podcast": "false",
+      "comments": "Melissa is so talented. We went to see her at Zanies just because it was my friend's birthday, but she blew me away. Her impressions are incredible and she just had so many funny things to say.",
+      "userId": 8,
+      "id": 18
+    },
+    {
+      "name": "Bill Burr",
+      "watched": "I'm Sorry You Feel That Way, the epic crowd video",
+      "toWatch": "Anything possible",
+      "podcast": "true",
+      "comments": "He's so funny. Some of his takes are a little out there, but at the end of the day he's hilarious and tries to say something with his comedy.",
+      "userId": 8,
+      "id": 19
+    },
+    {
+      "name": "Dave Chapelle",
+      "watched": "The Chapelle Show, Sticks & Stones, 8:46",
+      "toWatch": "Everything I possibly can. He's a genius",
+      "podcast": "false",
+      "comments": "Everyone loves Dave Chapelle, and if you don't, you don't love comedy. He's truly a genius.",
+      "userId": 8,
+      "id": 20
+    },
+    {
+      "name": "Bo Burnham",
+      "watched": "Words, Words, Words, I'm Bo Yo, what., Make Happy",
+      "toWatch": "Eighth Grade",
+      "podcast": "false",
+      "comments": "He's probably the first comedian I ever actually loved. I used to listen to his albums and songs all the time!",
+      "userId": 4,
+      "id": 21
+    },
+    {
+      "name": "Zainab Johnson",
+      "watched": "I saw a 15 minute set at the Improv, and 100 Humans on Netflix",
+      "toWatch": "Anything else she puts online!",
+      "podcast": "false",
+      "comments": "She is so funny. She should be much more famous than she is!",
+      "userId": 4,
+      "id": 22
+    },
+    {
+      "name": "Louis C.K. ",
+      "watched": "Sincerely Louis",
+      "toWatch": "All of his other specials, I hear he's hilarious",
+      "podcast": "false",
+      "comments": "He's exceptionally funny!",
+      "userId": 4,
+      "id": 23
+    },
+    {
+      "name": "John Crist",
+      "watched": "All of his instagram videos",
+      "toWatch": "I want to see him at Zanies!",
+      "podcast": "false",
+      "comments": "I love religious comedy!!",
+      "userId": 4,
+      "id": 24
+    },
+    {
+      "name": "Rosebud Baker",
+      "watched": "Some youtube videos",
+      "toWatch": "I need to look for more of her content!",
+      "podcast": "false",
+      "comments": "I watched her stuff because Daniel Sloss suggested it and I'm glad I did! I have a ticket to watch her on Zoom soon!",
+      "userId": 4,
+      "id": 25
+    },
+    {
+      "name": "Bryan Callen",
+      "watched": "All of his TV appearances and his comedy",
+      "toWatch": "Nothing I've seen it all",
+      "podcast": "true",
+      "comments": "I'm his #1 fan",
+      "userId": 4,
+      "id": 26
+    },
+    {
+      "name": "Ali Wong",
+      "watched": "Baby Cobra, Hard Knock Wife, saw her at Largo on Pete Homes' show",
+      "toWatch": "Anything she ever does. She's too funny",
+      "podcast": "false",
+      "comments": "Ali Wong is so popular yet somehow so underrated. She's so incredibly hilarious and I'm still so glad she was a surprise guest on a show I went to. I didn't love the show but she made it worth it.",
+      "userId": 4,
+      "id": 27
     }
   ],
   "specialLengths": [

@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=BioRhyme&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body {
+    font-family: 'Montserrat';
+    color: #2E232E;
+}
+
+.button--register {
+    outline: none;
+    background: none;
+    transition: .5s;
+    font-family: 'Montserrat';
+    border-radius: 2px;
+    padding: 5px;
+    margin: 7px;
+    border: 1px solid #2E232E;
+}
+.button--register:hover {
+    transform:scale(1.1); 
+    border: none;
+}
+
+.button--login {
+    outline: none;
+    background: none;
+    transition: .5s;
+    font-family: 'Montserrat';
+    border-radius: 2px;
+    padding: 5px;
+    margin: 7px;
+    border: 1px solid #2E232E;
+}
+.button--login:hover {
+    transform:scale(1.1); 
+    border: none;
+}
+
+.form--login {
+    border: 2px solid #6F2C3E;
+    border-top: 30px solid #6F2C3E;
+    margin-top: 30px;
+   margin-left: 300px;
+   margin-right: 300px;
+    color: #2E232E;
+    padding-left: 5px;
+}
+
+#logo {
+    height: 35px;
+    width: 35px;
+    text-align: center;
+}

@@ -101,7 +101,7 @@ Always renders veiw details buttons regardless of who current user is
                 () => {
                     deleteSpecial(special.id)
                     .then(() => {
-                        props.history.push("/specials")
+                        props.history.push(`/users/${user.id}`)
                     })
                 }
             }>
@@ -129,6 +129,7 @@ Always renders veiw details buttons regardless of who current user is
                         return (
                         <section className="userComedianList" key={comedian.id}>
                         <Comedian comedian={comedian} user={user} />
+                        <br />
                         <button class="button--comedianDetails" onClick={() => {
                         props.history.push(`/comedians/${comedian.id}`)
                         }}>View Comedian's Details</button>
@@ -138,7 +139,7 @@ Always renders veiw details buttons regardless of who current user is
                         () => {
                             deleteComedian(comedian.id)
                             .then(() => {
-                            props.history.push("/comedians")
+                            props.history.push(`/users/${user.id}`)
                             })
                         }
                         }>

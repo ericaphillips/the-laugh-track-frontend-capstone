@@ -64,7 +64,7 @@ and if the current user is the user who entered the comedian, renders a button t
                         return (
                             <section className="comedianListTwo" key={comedian.id}>
                         <Comedian comedian={comedian} user={user} />
-                        
+                        <br />
                         <button class="button--comedianDetails" onClick={() => {
                         props.history.push(`/comedians/${comedian.id}`)
                         }}>View Comedian's Details</button>

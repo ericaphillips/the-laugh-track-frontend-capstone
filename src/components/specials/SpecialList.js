@@ -62,7 +62,7 @@ and if the current user is the user who entered the special, renders a button to
                return (
                <section className="specialListTwo" key={special.id}>
                <Special special={special} user={user} />
-                
+                <br />
                 <button className="button--specialDetails" onClick={() => {
                 props.history.push(`/specials/${special.id}`)
                 }}>View Special's Details</button>

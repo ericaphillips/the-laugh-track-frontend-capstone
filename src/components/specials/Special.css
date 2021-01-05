@@ -53,6 +53,7 @@ body {
     flex-basis: 20%;
     margin: 10px;
     padding: 5px;
+    background-color: #F5F5F5;
 }
 
 .specialListTwo:nth-child(3n+3) {
@@ -139,6 +140,7 @@ a:link, a:visited, a:active, a:hover {
     font-family: 'Montserrat';
     border-radius: 2px;
     padding: 5px;
+    padding-top: 15px;
     margin: 7px;
     border: none;
     color: #2E232E;
@@ -173,6 +175,7 @@ a:link, a:visited, a:active, a:hover {
    margin-right: 300px;
     color: #2E232E;
     padding-left: 5px;
+    background-color: #F5F5F5;
 }
 
 h3, h2 {
@@ -188,6 +191,7 @@ h3, h2 {
     font-family: 'Montserrat';
     border-radius: 2px;
     padding: 2px;
+    margin-top: 10px;
     margin: 7px;
     border: 1px #2E232E;
 }
