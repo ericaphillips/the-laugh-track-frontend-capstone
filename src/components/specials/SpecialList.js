@@ -61,6 +61,7 @@ and if the current user is the user who entered the special, renders a button to
                const user= users.find(user => user.id === special.userId)
                return (
                <section className="specialListTwo" key={special.id}>
+                   
                <Special special={special} user={user} />
                 <br />
                 <button className="button--specialDetails" onClick={() => {
@@ -81,6 +82,7 @@ and if the current user is the user who entered the special, renders a button to
             Delete Special
             </button>
                }
+              
                </section>
                )})
             }

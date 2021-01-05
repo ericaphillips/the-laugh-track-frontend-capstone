@@ -43,6 +43,13 @@ body {
     border-radius: 35px;
 }
 
+.comedianListTwo:nth-child(3n+3):hover {
+    border: 2px solid #004452;
+    border-top: 30px solid #004452;
+    color:#2E232E;
+    border-radius: 5px;
+}
+
 .comedianListTwo:nth-child(3n+1) {
     border: 2px solid #6F2C3E;
     border-top: 30px solid #6F2C3E;
@@ -50,11 +57,25 @@ body {
     border-radius: 35px;
 }
 
+.comedianListTwo:nth-child(3n+1):hover {
+    border: 2px solid #6F2C3E;
+    border-top: 30px solid #6F2C3E;
+    color: #2E232E;
+    border-radius: 5px;
+}
+
 .comedianListTwo:nth-child(3n+2) {
     border:2px solid #CC8500;
     border-top: 30px solid #CC8500;
     color: #2E232E;
     border-radius: 35px;
+}
+
+.comedianListTwo:nth-child(3n+2):hover {
+    border:2px solid #CC8500;
+    border-top: 30px solid #CC8500;
+    color: #2E232E;
+    border-radius: 5px;
 }
 
 h1 {
