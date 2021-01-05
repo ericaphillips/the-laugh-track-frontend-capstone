@@ -11,5 +11,13 @@ h1 {
     font-family: 'BioRhyme';
     color: #2E232E;
     text-shadow: none;
-    text-align: left;
+}
+
+.home {
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftSide {
+    align-content: flex-start;
 }
