@@ -71,15 +71,15 @@ export const SpecialDetails = (props) => {
         <>
         <section className="special__details">
             <h3 className="special__name">{special.name}</h3>
-            <div className="special__comic">Comedian: {special.comicName}</div>
-            <div className="special__userRating">{user.name}'s Rating: {special.rating}</div>
-            <div className="special__length">Special's Length: {specialLength.length}</div>
-            <div className="special__platform">Streaming on: {specialPlatform.platform}</div>
-            <div className="special__cost">Cost: {special.cost}</div>
-            <div className="special__clean">Clean?: {special.clean}</div>
-            <div className="special__comments">{user.name}'s Comments: {special.comments}</div>
-            <div className="special__genre">Genre: {specialGenre.genre}</div>
-            <div className="special__user">Input by: {user.name}</div>
+            <div className="special__comic"><b>Comedian:</b> {special.comicName}</div>
+            <div className="special__userRating"><b>{user.name}'s Rating:</b> {special.rating}</div>
+            <div className="special__length"><b>Special's Length: </b>{specialLength.length}</div>
+            <div className="special__platform"><b>Streaming on:</b> {specialPlatform.platform}</div>
+            <div className="special__cost"><b>Cost:</b> {special.cost}</div>
+            <div className="special__clean"><b>Clean?:</b> {special.clean}</div>
+            <div className="special__comments"><b>{user.name}'s Comments:</b> {special.comments}</div>
+            <div className="special__genre"><b>Genre: </b>{specialGenre.genre}</div>
+            <div className="special__user"><b>Input by:</b> {user.name}</div>
 
         {/*Buttons only show if the currently logged in user entered the special*/}  
         {currentUser === parseInt(special.userId)  && 

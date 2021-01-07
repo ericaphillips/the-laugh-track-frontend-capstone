@@ -39,10 +39,10 @@ export const ComedianDetails = (props) => {
     return (
         <section className="comedian__details">
             <h3 className="comedian__name">{comedian.name}</h3>
-            <div className="comedian__watched">{user.name}'s Watched List: {comedian.watched}</div>
-            <div className="comedian__toWatch">{user.name}'s To Watch List: {comedian.toWatch}</div>
-            <div className="comedian__podcast">Does this comedian have a podcast?: {comedian.podcast}</div>
-            <div className="comedian__comments">{user.name}'s Comments: {comedian.comments}</div>
+            <div className="comedian__watched"><b>{user.name}'s Watched List:</b> {comedian.watched}</div>
+            <div className="comedian__toWatch"><b>{user.name}'s To Watch List:</b> {comedian.toWatch}</div>
+            <div className="comedian__podcast"><b>Does this comedian have a podcast?:</b> {comedian.podcast}</div>
+            <div className="comedian__comments"><b>{user.name}'s Comments: </b>{comedian.comments}</div>
 
     {/*Buttons only show if the currently logged in user entered the comedian*/}
     {currentUser === parseInt(comedian.userId)  && 

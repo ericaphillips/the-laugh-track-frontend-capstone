@@ -6,9 +6,9 @@ import { Link } from "react-router-dom"
 
 export const Comedian = ({ comedian, user }) => (
     <section className="comedian">
-        <h4 className="comedian__name">
+        <h3 className="comedian__name">
             {comedian.name}
-        </h4>
+        </h3>
         <div className="comedian__comments">Comments by <Link to={`/users/${user.id}`}>{user.name}</Link>: {comedian.comments}</div>
     </section>
 )

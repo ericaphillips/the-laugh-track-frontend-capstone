@@ -59,7 +59,7 @@
       "id": 8,
       "name": "X",
       "comicName": "Daniel Sloss",
-      "rating": 9,
+      "rating": 10,
       "specialLengthId": 5,
       "specialPlatformId": 4,
       "cost": "HBO Subscription",
@@ -342,15 +342,6 @@
       "id": 13
     },
     {
-      "name": "Chris D'elia",
-      "watched": "Man On Fire, Incorrigible, No Pain, You, Alone Together, Whitney",
-      "toWatch": "Undateable",
-      "podcast": "true",
-      "comments": "He's so funny! He makes me cry with laughter all the time",
-      "userId": 4,
-      "id": 14
-    },
-    {
       "name": "Dusty Slay",
       "watched": "Local spots, Comedy Central standup on Youtube",
       "toWatch": "Zanies shows one day!",
@@ -423,24 +414,6 @@
       "id": 22
     },
     {
-      "name": "Louis C.K. ",
-      "watched": "Sincerely Louis",
-      "toWatch": "All of his other specials, I hear he's hilarious",
-      "podcast": "false",
-      "comments": "He's exceptionally funny!",
-      "userId": 4,
-      "id": 23
-    },
-    {
-      "name": "John Crist",
-      "watched": "All of his instagram videos",
-      "toWatch": "I want to see him at Zanies!",
-      "podcast": "false",
-      "comments": "I love religious comedy!!",
-      "userId": 4,
-      "id": 24
-    },
-    {
       "name": "Rosebud Baker",
       "watched": "Some youtube videos",
       "toWatch": "I need to look for more of her content!",
@@ -450,15 +423,6 @@
       "id": 25
     },
     {
-      "name": "Bryan Callen",
-      "watched": "All of his TV appearances and his comedy",
-      "toWatch": "Nothing I've seen it all",
-      "podcast": "true",
-      "comments": "I'm his #1 fan",
-      "userId": 4,
-      "id": 26
-    },
-    {
       "name": "Ali Wong",
       "watched": "Baby Cobra, Hard Knock Wife, saw her at Largo on Pete Homes' show",
       "toWatch": "Anything she ever does. She's too funny",
@@ -466,6 +430,15 @@
       "comments": "Ali Wong is so popular yet somehow so underrated. She's so incredibly hilarious and I'm still so glad she was a surprise guest on a show I went to. I didn't love the show but she made it worth it.",
       "userId": 4,
       "id": 27
+    },
+    {
+      "name": "Bryan",
+      "watched": "Dad jokes all the time",
+      "toWatch": "More",
+      "podcast": "false",
+      "comments": "I'm sad I'm missing out on future dad jokes",
+      "userId": 4,
+      "id": 28
     }
   ],
   "specialLengths": [

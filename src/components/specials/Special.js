@@ -34,9 +34,9 @@ export const Special = ({ special, user }) => {
     return (
 
     <section className="special">
-        <h4 className="special__name">
+        <h3 className="special__name">
                 { special.name }
-        </h4>
+        </h3>
         <div className="special__comic">Comedian: {special.comicName}</div>
         <div className="special__user">Entered by: <Link to={`/users/${user.id}`}>{user.name}</Link></div>
         <div className="special__rating">{user.name}'s rating: {special.rating}</div>
